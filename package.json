@@ -4,13 +4,12 @@
   "description": "A nodejs interface to communicate with NetworkManager and ModemManager via DBus",
   "keywords": ["dbus", "modem", "modemmanager", "networkmanager"],
   "author": "Nathan Pipe",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "lib/src/index.js",
+  "types": "lib/src/index.d.ts",
   "type": "commonjs",
   "scripts": {
     "build": "./node_modules/typescript/bin/tsc -p tsconfig.json",
     "test": "mocha -r ts-node/register --require test/src/hooks.ts 'test/src/*.ts'",
-    "debug": "npm run build && node --inspect lib/test.js",
     "prepublish": "npm run build"
   },
   "files": [
