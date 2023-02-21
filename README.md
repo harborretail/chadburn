@@ -12,7 +12,7 @@ Huge credit goes to Bailey Blankenship at Dropworks and anyone else who contribu
 
 ## Installation
 
-Using chadburn requires you to fulfill the installation requirements for [node-dbus](https://github.com/Shouqun/node-dbus#dependencies), which in short (for linux systems) is `node-gyp`, `libdbus-1-dev`, and `libglib2.0-dev`. Then simply run:
+Using chadburn requires you to fulfill the installation requirements for [node-dbus](https://www.npmjs.com/package/dbus#dependencies), which in short (for linux systems) is `node-gyp`, `libdbus-1-dev`, and `libglib2.0-dev`. Then simply run:
 ```
 npm install chadburn
 ```
@@ -115,4 +115,4 @@ and then
 docker run chadburn-test
 ```
 
-or you can start up python-dbusmock on your own and kick off the tests with `npm run test`. In order to run the tests this way you'll need ModemManager and NetworkManager to be disabled before starting python-dbusmock, the dbus daemon won't allow the mock service to override an a service that's already been registered.
+or you can start up python-dbusmock on your own and kick off the tests with `npm run test`. In order to run the tests this way you'll need ModemManager and NetworkManager to be disabled before starting python-dbusmock, the dbus daemon won't allow the mock service to override a service that's already been registered.
