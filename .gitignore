@@ -1,0 +1,5 @@
+node_modules
+lib
+reference
+.dockerignore
+dbusmock-git
