@@ -122,11 +122,11 @@ export class ConnectionSettingsManager {
      * @param password The password of the network
      * @returns Promise of the new connection profile's path
      */
-    public addWifiWpaConnection(ssid: string, hidden: boolean, password?: string): Promise<ConnectionProfilePath> {
+    public addWifiWpaConnection(ssid: string, hidden: boolean, password?: string, deviceiface?: string): Promise<ConnectionProfilePath> {
         let connectionProfile: any = {
             connection: {
               type: "802-11-wireless",
-              "interface-name": "wlan0",
+              "interface-name": deviceiface || "wlan0",
               uuid: uuidv4(),
               id: ssid
             },

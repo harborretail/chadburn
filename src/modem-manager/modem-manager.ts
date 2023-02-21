@@ -1,14 +1,3 @@
-/*
-BASH at command example
-#!/bin/sh
-
-# Sends command 'ATI' to modem #3
-# Get a list of modems by running `mmcli -L`
-# Timeout is (probably) 2 seconds
-# Also see https://www.freedesktop.org/software/ModemManager/api/latest/gdbus-org.freedesktop.ModemManager1.Modem.html#gdbus-method-org-freedesktop-ModemManager1-Modem.Command
-dbus-send --system --dest=org.freedesktop.ModemManager1 --print-reply /org/freedesktop/ModemManager1/Modem/3 org.freedesktop.ModemManager1.Modem.Command string:'ATI' uint32:2000
-
-*/
 import DBus = require("dbus");
 import { Modem } from "./modem";
 import { BehaviorSubject, Observable } from "rxjs";
