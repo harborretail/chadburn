@@ -50,8 +50,10 @@ const bus = dbus.getBus('system');
 const network_manager = await NetworkManager.init(bus);
 
 // Retrieve current properties from manager object
+// the properties object will continuously update as state changes
 console.log(network_manager.properties);
-// the properties object will continuously update as state changes, and can also be subscribed to as an RxJS object
+
+//and can also be subscribed to as an RxJS object
 network_manager.properties$.subscribe(properties => {
     // filter through properties, listen for changes, etc
 });
@@ -101,7 +103,9 @@ let modem0 = modem_manager.getModem(0);
 
 ## Testing
 
-If you want to run the testing scripts, you'll need to install [python-dbusmock](https://github.com/martinpitt/python-dbusmock) by [Martin Pitt](https://github.com/martinpitt). A template for modemmanager along with a modification to the mockobject.py source file can be found under `test/python-dbusmock` (at time of writing, python-dbusmock strips away the XML delcaration and dbus headers from object introspections, which causes [node-dbus](https://github.com/Shouqun/node-dbus) error out, the modified mockobject.py fixes that).
+If you want to run the testing scripts, you'll need to install [python-dbusmock](https://github.com/martinpitt/python-dbusmock) by [Martin Pitt](https://github.com/martinpitt). A template for modemmanager along with a modification to the mockobject.py source file can be found under `test/python-dbusmock` (at time of writing, python-dbusmock strips away the XML delcaration and dbus headers from object introspections, which causes [node-dbus](https://www.npmjs.com/package/dbus#dependencies) to error out, the modified mockobject.py fixes that).
+
+**python-dbusmock is licensed under [LGPL-3.0](https://www.gnu.org/licenses/lgpl-3.0.html). The modification provided in this repository maintains that license.**
 
 If you clone python-dbusmock into `test/dbusmock-git/python-dbusmock`, then you can simply run the tests by navigating to the root folder of chadburn, and building the testing container with 
 
