@@ -1,24 +1,20 @@
 {
   "name": "chadburn",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "A nodejs interface to communicate with NetworkManager and ModemManager via DBus",
-  "author": "Harbor Digital",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "keywords": ["dbus", "modem", "modemmanager", "networkmanager"],
+  "author": "Nathan Pipe",
+  "main": "lib/src/index.js",
+  "types": "lib/src/index.d.ts",
   "type": "commonjs",
   "scripts": {
     "build": "./node_modules/typescript/bin/tsc -p tsconfig.json",
-    "test": "mocha -r ts-node/register --require test/hooks.ts 'test/**/*.ts'",
-    "debug": "npm run build && node --inspect lib/test.js",
+    "test": "mocha -r ts-node/register --require test/src/hooks.ts 'test/src/*.ts'",
     "prepublish": "npm run build"
   },
   "files": [
     "lib/"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://gitlab.com/dropworks-oss/networkmanager-dbus"
-  },
   "license": "MIT",
   "devDependencies": {
     "@types/chai": "^4.3.3",
