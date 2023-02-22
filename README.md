@@ -20,7 +20,7 @@ and you should be good to go!
 
 ## Docs
 
-More detailed documentation generated from Typedoc can be found at `docs/index.html` within the project repository.
+More detailed documentation generated from Typedoc can be found at `docs/index.html` within the project repository, or at https://harborretail.github.io/chadburn
 
 Additionally you can take a look at the offiical dbus documentation for [NetworkManager](https://developer-old.gnome.org/NetworkManager/stable/spec.html) and [ModemManager](https://www.freedesktop.org/software/ModemManager/doc/latest/ModemManager/ref-dbus.html) for specifications on the data you're getting out of Chadburn. A lot of the Typedoc documentation replicates the official documentation for these services, but may not reflect the specific version of NetworkManager or ModemManager you have installed on your system.
 
@@ -115,4 +115,6 @@ and then
 docker run chadburn-test
 ```
 
-or you can start up python-dbusmock on your own and kick off the tests with `npm run test`. In order to run the tests this way you'll need ModemManager and NetworkManager to be disabled before starting python-dbusmock, the dbus daemon won't allow the mock service to override a service that's already been registered.
+or you can start up python-dbusmock on your own and kick off the tests with `npm run test`
+
+In order to run the tests this way you'll need ModemManager and NetworkManager to be disabled before starting python-dbusmock, the dbus daemon won't allow the mock service to override a service that's already been registered.
