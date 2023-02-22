@@ -21,7 +21,7 @@
 Useful for reflecting the overall state of an ethernet or wifi device</p>
 </div></section><aside class="tsd-sources">
 <ul>
-<li>Defined in network-manager/netman-dbus-types.ts:284</li></ul></aside>
+<li>Defined in network-manager/netman-dbus-types.ts:293</li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -51,91 +51,91 @@ Useful for reflecting the overall state of an ethernet or wifi device</p>
 <div class="tsd-comment tsd-typography"><p>the device&#39;s state is unknown</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in network-manager/netman-dbus-types.ts:287</li></ul></aside></section>
+<li>Defined in network-manager/netman-dbus-types.ts:296</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum"><a id="UNMANAGED" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>UNMANAGED</span><a href="#UNMANAGED" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">UNMANAGED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">10</span></div>
 <div class="tsd-comment tsd-typography"><p>the device is recognized, but not managed by NetworkManager</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in network-manager/netman-dbus-types.ts:290</li></ul></aside></section>
+<li>Defined in network-manager/netman-dbus-types.ts:299</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum"><a id="UNAVAILABLE" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>UNAVAILABLE</span><a href="#UNAVAILABLE" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">UNAVAILABLE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">20</span></div>
 <div class="tsd-comment tsd-typography"><p>the device is managed by NetworkManager, but is not available for use. Reasons may include the wireless switched off, missing firmware, no ethernet carrier, missing supplicant or modem manager, etc.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in network-manager/netman-dbus-types.ts:293</li></ul></aside></section>
+<li>Defined in network-manager/netman-dbus-types.ts:302</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum"><a id="DISCONNECTED" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>DISCONNECTED</span><a href="#DISCONNECTED" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">DISCONNECTED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">30</span></div>
 <div class="tsd-comment tsd-typography"><p>the device can be activated, but is currently idle and not connected to a network.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in network-manager/netman-dbus-types.ts:296</li></ul></aside></section>
+<li>Defined in network-manager/netman-dbus-types.ts:305</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum"><a id="PREPARE" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>PREPARE</span><a href="#PREPARE" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">PREPARE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">40</span></div>
 <div class="tsd-comment tsd-typography"><p>the device is preparing the connection to the network. This may include operations like changing the MAC address, setting physical link properties, and anything else required to connect to the requested network.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in network-manager/netman-dbus-types.ts:299</li></ul></aside></section>
+<li>Defined in network-manager/netman-dbus-types.ts:308</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum"><a id="CONFIG" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>CONFIG</span><a href="#CONFIG" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">CONFIG<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">50</span></div>
 <div class="tsd-comment tsd-typography"><p>the device is connecting to the requested network. This may include operations like associating with the Wi-Fi AP, dialing the modem, connecting to the remote Bluetooth device, etc.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in network-manager/netman-dbus-types.ts:302</li></ul></aside></section>
+<li>Defined in network-manager/netman-dbus-types.ts:311</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum"><a id="NEED_AUTH" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>NEED_<wbr/>AUTH</span><a href="#NEED_AUTH" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">NEED_<wbr/>AUTH<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">60</span></div>
 <div class="tsd-comment tsd-typography"><p>the device requires more information to continue connecting to the requested network. This includes secrets like WiFi passphrases, login passwords, PIN codes, etc.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in network-manager/netman-dbus-types.ts:305</li></ul></aside></section>
+<li>Defined in network-manager/netman-dbus-types.ts:314</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum"><a id="IP_CONFIG" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>IP_<wbr/>CONFIG</span><a href="#IP_CONFIG" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">IP_<wbr/>CONFIG<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">70</span></div>
 <div class="tsd-comment tsd-typography"><p>the device is requesting IPv4 and/or IPv6 addresses and routing information from the network.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in network-manager/netman-dbus-types.ts:308</li></ul></aside></section>
+<li>Defined in network-manager/netman-dbus-types.ts:317</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum"><a id="IP_CHECK" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>IP_<wbr/>CHECK</span><a href="#IP_CHECK" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">IP_<wbr/>CHECK<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">80</span></div>
 <div class="tsd-comment tsd-typography"><p>the device is checking whether further action is required for the requested network connection. This may include checking whether only local network access is available, whether a captive portal is blocking access to the Internet, etc.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in network-manager/netman-dbus-types.ts:311</li></ul></aside></section>
+<li>Defined in network-manager/netman-dbus-types.ts:320</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum"><a id="SECONDARIES" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>SECONDARIES</span><a href="#SECONDARIES" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">SECONDARIES<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">90</span></div>
 <div class="tsd-comment tsd-typography"><p>the device is waiting for a secondary connection (like a VPN) which must activated before the device can be activated</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in network-manager/netman-dbus-types.ts:314</li></ul></aside></section>
+<li>Defined in network-manager/netman-dbus-types.ts:323</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum"><a id="ACTIVATED" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>ACTIVATED</span><a href="#ACTIVATED" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">ACTIVATED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">100</span></div>
 <div class="tsd-comment tsd-typography"><p>the device has a network connection, either local or global.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in network-manager/netman-dbus-types.ts:317</li></ul></aside></section>
+<li>Defined in network-manager/netman-dbus-types.ts:326</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum"><a id="DEACTIVATING" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>DEACTIVATING</span><a href="#DEACTIVATING" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">DEACTIVATING<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">110</span></div>
 <div class="tsd-comment tsd-typography"><p>a disconnection from the current network connection was requested, and the device is cleaning up resources used for that connection. The network connection may still be valid.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in network-manager/netman-dbus-types.ts:320</li></ul></aside></section>
+<li>Defined in network-manager/netman-dbus-types.ts:329</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum"><a id="FAILED" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>FAILED</span><a href="#FAILED" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">FAILED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">120</span></div>
 <div class="tsd-comment tsd-typography"><p>the device failed to connect to the requested network and is cleaning up the connection request</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in network-manager/netman-dbus-types.ts:323</li></ul></aside></section></section></div>
+<li>Defined in network-manager/netman-dbus-types.ts:332</li></ul></aside></section></section></div>
 <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 <div class="tsd-navigation settings">
 <details class="tsd-index-accordion"><summary class="tsd-accordion-summary">

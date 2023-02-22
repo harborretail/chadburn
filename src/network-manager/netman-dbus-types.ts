@@ -1,4 +1,13 @@
 /**
+ * An object with properties named after the object path to each available 
+ * Access Point (ie '/org/freedesktop/NetworkManager/AccessPoint/247987').
+ * The value of each entry being the AccessPoint's current properties.
+ */
+export type AccessPointMap = {
+    [key: string]: AccessPointProperties
+};
+
+/**
  * The type of a device enumerated by Network Manager
  * @readonly
  * @enum {number}
