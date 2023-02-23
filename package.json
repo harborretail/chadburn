@@ -1,9 +1,14 @@
 {
   "name": "chadburn",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A nodejs interface to communicate with NetworkManager and ModemManager via DBus",
   "keywords": ["dbus", "modem", "modemmanager", "networkmanager"],
   "author": "Nathan Pipe",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/harborretail/chadburn"
+    },
+  "homepage": "https://harborretail.github.io/chadburn",
   "main": "lib/src/index.js",
   "types": "lib/src/index.d.ts",
   "type": "commonjs",
