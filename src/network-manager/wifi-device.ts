@@ -1,12 +1,8 @@
 import DBus = require("dbus");
 import { BehaviorSubject } from "rxjs";
 import { Observable } from "rxjs/internal/Observable";
-import { AccessPointProperties, ConnectionProfilePath, WifiDeviceProperties } from "./netman-dbus-types";
+import { AccessPointMap, AccessPointProperties, ConnectionProfilePath, WifiDeviceProperties } from "./netman-dbus-types";
 import { byteArrayToString, call, getAllProperties, int32ToByteArray, objectInterface, signal } from "../util";
-
-type AccessPointMap = {
-    [key: string]: AccessPointProperties
-};
 
 export class WifiDevice {
 

@@ -64,7 +64,7 @@ export class Modem {
     }
 
     /**
-     * Creates a new Modem object. Typically Modem objects will be created automatically when a {@link ModemManager} object is instantiated. They can be accessed from {@link ModemManager.modems()}
+     * Creates a new Modem object. Typically Modem objects will be created automatically when a {@link ModemManager} object is instantiated. They can be accessed from {@link ModemManager.modems}
      * @param bus A DBus system bus instance (ie dbus.getBus('system')), a single bus instance should be used for all objects created with this library.
      * @param objectPath A modem object path (ie "/org/freedesktop/ModemManager1/Modem/0").
      * @returns A Promise containing a Modem object found using objectPath
