@@ -20,7 +20,7 @@ and you should be good to go!
 
 ## Docs
 
-More detailed documentation generated from Typedoc can be found at `docs/index.html` within the project repository.
+More detailed documentation generated from Typedoc can be found at `docs/index.html` within the project repository, or at https://harborretail.github.io/chadburn
 
 Additionally you can take a look at the offiical dbus documentation for [NetworkManager](https://developer-old.gnome.org/NetworkManager/stable/spec.html) and [ModemManager](https://www.freedesktop.org/software/ModemManager/doc/latest/ModemManager/ref-dbus.html) for specifications on the data you're getting out of Chadburn. A lot of the Typedoc documentation replicates the official documentation for these services, but may not reflect the specific version of NetworkManager or ModemManager you have installed on your system.
 
@@ -50,8 +50,10 @@ const bus = dbus.getBus('system');
 const network_manager = await NetworkManager.init(bus);
 
 // Retrieve current properties from manager object
+// the properties object will continuously update as state changes
 console.log(network_manager.properties);
-// the properties object will continuously update as state changes, and can also be subscribed to as an RxJS object
+
+//and can also be subscribed to as an RxJS object
 network_manager.properties$.subscribe(properties => {
     // filter through properties, listen for changes, etc
 });
@@ -101,7 +103,9 @@ let modem0 = modem_manager.getModem(0);
 
 ## Testing
 
-If you want to run the testing scripts, you'll need to install [python-dbusmock](https://github.com/martinpitt/python-dbusmock) by [Martin Pitt](https://github.com/martinpitt). A template for modemmanager along with a modification to the mockobject.py source file can be found under `test/python-dbusmock` (at time of writing, python-dbusmock strips away the XML delcaration and dbus headers from object introspections, which causes [node-dbus](https://github.com/Shouqun/node-dbus) error out, the modified mockobject.py fixes that).
+If you want to run the testing scripts, you'll need to install [python-dbusmock](https://github.com/martinpitt/python-dbusmock) by [Martin Pitt](https://github.com/martinpitt). A template for modemmanager along with a modification to the mockobject.py source file can be found under `test/python-dbusmock` (at time of writing, python-dbusmock strips away the XML delcaration and dbus headers from object introspections, which causes [node-dbus](https://www.npmjs.com/package/dbus#dependencies) to error out, the modified mockobject.py fixes that).
+
+**python-dbusmock is licensed under [LGPL-3.0](https://www.gnu.org/licenses/lgpl-3.0.html). The modification provided in this repository maintains that license.**
 
 If you clone python-dbusmock into `test/dbusmock-git/python-dbusmock`, then you can simply run the tests by navigating to the root folder of chadburn, and building the testing container with 
 
@@ -115,4 +119,6 @@ and then
 docker run chadburn-test
 ```
 
-or you can start up python-dbusmock on your own and kick off the tests with `npm run test`. In order to run the tests this way you'll need ModemManager and NetworkManager to be disabled before starting python-dbusmock, the dbus daemon won't allow the mock service to override a service that's already been registered.
+or you can start up python-dbusmock on your own and kick off the tests with `npm run test`
+
+In order to run the tests this way you'll need ModemManager and NetworkManager to be disabled before starting python-dbusmock, the dbus daemon won't allow the mock service to override a service that's already been registered.

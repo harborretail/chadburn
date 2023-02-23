@@ -1090,7 +1090,7 @@ export interface Modem3gppProperties {
      * 
      * The network may decide to use different settings during the actual device attach procedure, e.g. if the device is roaming or no explicit settings were requested, so the values shown in the "{@link Modem3gppProperties.InitialEpsBearer}" bearer object may be totally different.
      * 
-     * This is a read-only property, updating these settings should be done using the {@link Modem3gpp.setInitialEpsBearerSettings setInitialEpsBearerSettings} method. 
+     * This is a read-only property, updating these settings should be done using the {@link "Modem3gpp"} setInitialEpsBearerSettings method. 
      */
     InitialEpsBearerSettings: object;                   // a{sv}
 
