@@ -119,7 +119,8 @@ export class ConnectionSettingsManager {
      * Convenience function to add new WPA wifi connection profiles
      * @param ssid SSID of the network to connect to as a string
      * @param hidden Whether or not the network has a hidden SSID
-     * @param password The password of the network
+     * @param password The password of the network. Optional, if no password provided the network will treated as unencrypted.
+     * @param deviceiface The device interface name to attempt this connection on. Optional, if not provided "wlan0" will be attempted instead.
      * @returns Promise of the new connection profile's path
      */
     public addWifiWpaConnection(ssid: string, hidden: boolean, password?: string, deviceiface?: string): Promise<ConnectionProfilePath> {
