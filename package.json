@@ -15,7 +15,8 @@
   "scripts": {
     "build": "./node_modules/typescript/bin/tsc -p tsconfig.json",
     "test": "mocha -r ts-node/register --require test/src/hooks.ts 'test/src/*.ts'",
-    "prepublish": "npm run build"
+    "docs": "npx typedoc ./src --readme none",
+    "prepublish": "npm run build && npm run docs"
   },
   "files": [
     "lib/"
