@@ -98,6 +98,8 @@ export class ConnectionSettingsManager {
     }
 
     /**
+     * **Requires root access, depending on user permissions and NetworkManager policy configuration.**
+     * 
      * Adds a new connection profile and returns the path of the new profile
      * @param connectionSettings Connection settings to use when constructing the profile
      * @returns Promise of the new connection profile path
@@ -116,6 +118,8 @@ export class ConnectionSettingsManager {
     }
 
     /**
+     * **Requires root access, depending on user permissions and NetworkManager policy configuration.**
+     * 
      * Convenience function to add new WPA wifi connection profiles
      * @param ssid SSID of the network to connect to as a string
      * @param hidden Whether or not the network has a hidden SSID
@@ -160,6 +164,8 @@ export class ConnectionSettingsManager {
     }
 
     /**
+     * **Requires root access, depending on user permissions and NetworkManager policy configuration.**
+     * 
      * Deactivates and deletes a connection profile
      * This is used to implement "forget wifi network" functionality
      * @param profilePath The connection profile path to remove
