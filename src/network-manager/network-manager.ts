@@ -1,7 +1,7 @@
 import DBus = require("dbus");
 import { BehaviorSubject, Observable } from "rxjs";
 import { ConnectionSettingsManager } from "./connection-settings-manager";
-import { DeviceType, NetworkManagerProperties } from "./netman-dbus-types";
+import { DeviceType, NetworkManagerProperties, ConnectivityState } from "./netman-dbus-types";
 import { EthernetDevice } from "./ethernet-device";
 import { call, getAllProperties, objectInterface, setProperty, signal } from "../util";
 import { WifiDevice } from "./wifi-device";
@@ -195,11 +195,46 @@ export class NetworkManager {
     }
 
     /**
+     * **Requires root access, depending on user permissions and NetworkManager policy configuration.**
+     * 
      * Enables or disables wireless functionality
      * @param enable If true, enable wireless; if false, disable wireless
      */
     public enableWireless(enable: boolean) {
         setProperty(this._networkManagerInterface, "WirelessEnabled", enable);
+    }
+
+    /**
+     * **Requires root access, depending on user permissions and NetworkManager policy configuration.**
+     * 
+     * Enables or disables built in connectivity checking mechanism in NetworkManager. The URI present in
+     * {@link NetworkManagerTypes!NetworkManagerProperties.ConnectivityCheckUri} will be polled to determine connection status.
+     * @see https://developer-old.gnome.org/NetworkManager/stable/NetworkManager.conf.html Specifically the "connectivity section" near the bottom
+     * @param enable If true, enable connectivity checks; if false, disable connectivity checks
+     */
+    public enableConnectivity(enable: boolean) {
+        setProperty(this._networkManagerInterface, "ConnectivityCheckEnabled", enable);
+    }
+
+    /**
+     * **Requires root access, depending on user permissions and NetworkManager policy configuration.**
+     * 
+     * Initiates a new connectivity check and returns the result. In order for this method to work the {@link NetworkManager.properties properties}
+     * value for ConnectivityCheckAvailable and ConnectivityCheckEnabled will both need to be true, and 
+     * {@link NetworkManagerTypes!NetworkManagerProperties.ConnectivityCheckUri} will need to be set to a valid NetworkManager connectivity service.
+     * 
+     * @see https://developer-old.gnome.org/NetworkManager/stable/NetworkManager.conf.html Specifically the "connectivity section" near the bottom
+     * @returns Promise of a {@link NetworkManagerTypes!ConnectivityState} value representing the current connectivity status.
+     */
+    public checkConnectivity(): Promise<ConnectivityState> {
+        return new Promise<ConnectivityState>(async (resolve, reject) => {
+            try {
+                let value = await call(this._networkManagerInterface, "CheckConnectivity", {});
+                resolve(value);
+            } catch(err) {
+                reject(`Error checking connectivity: ${err}`);
+            }
+        });
     }
 
     private _listenForPropertyChanges() {

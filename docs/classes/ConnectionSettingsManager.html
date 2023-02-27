@@ -12,7 +12,7 @@
 <div class="col-8 col-content">
 <div class="tsd-page-title">
 <ul class="tsd-breadcrumb">
-<li><a href="../modules.html">chadburn</a></li>
+<li><a href="../index.html">chadburn</a></li>
 <li><a href="ConnectionSettingsManager.html">ConnectionSettingsManager</a></li></ul>
 <h1>Class ConnectionSettingsManager</h1></div>
 <section class="tsd-panel tsd-comment">
@@ -87,7 +87,7 @@ by either creating one with <code>addConnectionProfile()</code> or using a saved
 <li class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in network-manager/connection-settings-manager.ts:186</li></ul></aside></li></ul></section>
+<li>Defined in network-manager/connection-settings-manager.ts:193</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private"><a id="_listenForPropertyChanges" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagPrivate">Private</code> <span>_listen<wbr/>For<wbr/>Property<wbr/>Changes</span><a href="#_listenForPropertyChanges" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
@@ -95,13 +95,14 @@ by either creating one with <code>addConnectionProfile()</code> or using a saved
 <li class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in network-manager/connection-settings-manager.ts:178</li></ul></aside></li></ul></section>
+<li>Defined in network-manager/connection-settings-manager.ts:185</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="addConnectionProfile" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>add<wbr/>Connection<wbr/>Profile</span><a href="#addConnectionProfile" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 <li class="tsd-signature tsd-anchor-link" id="addConnectionProfile.addConnectionProfile-1">add<wbr/>Connection<wbr/>Profile<span class="tsd-signature-symbol">(</span>connectionSettings<span class="tsd-signature-symbol">: </span><a href="../interfaces/NetworkManagerTypes.ConnectionProfile.html" class="tsd-signature-type" data-tsd-kind="Interface">ConnectionProfile</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><a href="#addConnectionProfile.addConnectionProfile-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Adds a new connection profile and returns the path of the new profile</p>
+<div class="tsd-comment tsd-typography"><p><strong>Requires root access, depending on user permissions and NetworkManager policy configuration.</strong></p>
+<p>Adds a new connection profile and returns the path of the new profile</p>
 
 <h3>Returns</h3><p>Promise of the new connection profile path</p>
 
@@ -119,13 +120,14 @@ by either creating one with <code>addConnectionProfile()</code> or using a saved
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in network-manager/connection-settings-manager.ts:107</li></ul></aside></li></ul></section>
+<li>Defined in network-manager/connection-settings-manager.ts:109</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="addWifiWpaConnection" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>add<wbr/>Wifi<wbr/>Wpa<wbr/>Connection</span><a href="#addWifiWpaConnection" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-<li class="tsd-signature tsd-anchor-link" id="addWifiWpaConnection.addWifiWpaConnection-1">add<wbr/>Wifi<wbr/>Wpa<wbr/>Connection<span class="tsd-signature-symbol">(</span>ssid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, hidden<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, password<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><a href="#addWifiWpaConnection.addWifiWpaConnection-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-signature tsd-anchor-link" id="addWifiWpaConnection.addWifiWpaConnection-1">add<wbr/>Wifi<wbr/>Wpa<wbr/>Connection<span class="tsd-signature-symbol">(</span>ssid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, hidden<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, password<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, deviceiface<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><a href="#addWifiWpaConnection.addWifiWpaConnection-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Convenience function to add new WPA wifi connection profiles</p>
+<div class="tsd-comment tsd-typography"><p><strong>Requires root access, depending on user permissions and NetworkManager policy configuration.</strong></p>
+<p>Convenience function to add new WPA wifi connection profiles</p>
 
 <h3>Returns</h3><p>Promise of the new connection profile&#39;s path</p>
 </div>
@@ -142,17 +144,22 @@ by either creating one with <code>addConnectionProfile()</code> or using a saved
 </div></li>
 <li>
 <h5><code class="tsd-tag ts-flagOptional">Optional</code> password: <span class="tsd-signature-type">string</span></h5>
-<div class="tsd-comment tsd-typography"><p>The password of the network</p>
+<div class="tsd-comment tsd-typography"><p>The password of the network. Optional, if no password provided the network will treated as unencrypted.</p>
+</div></li>
+<li>
+<h5><code class="tsd-tag ts-flagOptional">Optional</code> deviceiface: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The device interface name to attempt this connection on. Optional, if not provided &quot;wlan0&quot; will be attempted instead.</p>
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in network-manager/connection-settings-manager.ts:125</li></ul></aside></li></ul></section>
+<li>Defined in network-manager/connection-settings-manager.ts:130</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="removeConnectionProfile" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>remove<wbr/>Connection<wbr/>Profile</span><a href="#removeConnectionProfile" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 <li class="tsd-signature tsd-anchor-link" id="removeConnectionProfile.removeConnectionProfile-1">remove<wbr/>Connection<wbr/>Profile<span class="tsd-signature-symbol">(</span>profilePath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><a href="#removeConnectionProfile.removeConnectionProfile-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Deactivates and deletes a connection profile
+<div class="tsd-comment tsd-typography"><p><strong>Requires root access, depending on user permissions and NetworkManager policy configuration.</strong></p>
+<p>Deactivates and deletes a connection profile
 This is used to implement &quot;forget wifi network&quot; functionality</p>
 </div>
 <div class="tsd-parameters">
@@ -164,7 +171,7 @@ This is used to implement &quot;forget wifi network&quot; functionality</p>
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in network-manager/connection-settings-manager.ts:166</li></ul></aside></li></ul></section></section>
+<li>Defined in network-manager/connection-settings-manager.ts:173</li></ul></aside></li></ul></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Properties</h2>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private"><a id="_bus" class="tsd-anchor"></a>
@@ -280,7 +287,7 @@ This is used to implement &quot;forget wifi network&quot; functionality</p>
 <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4.93896 8.531L12 15.591L19.061 8.531L16.939 6.409L12 11.349L7.06098 6.409L4.93896 8.531Z" fill="var(--color-text)"></path></svg> Modules</h3></summary>
 <div class="tsd-accordion-details">
 <ul>
-<li><a href="../modules.html">chadburn</a>
+<li><a href="../index.html">chadburn</a>
 <ul>
 <li class="tsd-kind-namespace"><a href="../modules/ModemManagerTypes.html">Modem<wbr/>Manager<wbr/>Types</a></li>
 <li class="tsd-kind-namespace"><a href="../modules/NetworkManagerTypes.html">Network<wbr/>Manager<wbr/>Types</a></li></ul></li></ul></div></details></nav>

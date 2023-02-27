@@ -98,6 +98,8 @@ export class ConnectionSettingsManager {
     }
 
     /**
+     * **Requires root access, depending on user permissions and NetworkManager policy configuration.**
+     * 
      * Adds a new connection profile and returns the path of the new profile
      * @param connectionSettings Connection settings to use when constructing the profile
      * @returns Promise of the new connection profile path
@@ -116,17 +118,20 @@ export class ConnectionSettingsManager {
     }
 
     /**
+     * **Requires root access, depending on user permissions and NetworkManager policy configuration.**
+     * 
      * Convenience function to add new WPA wifi connection profiles
      * @param ssid SSID of the network to connect to as a string
      * @param hidden Whether or not the network has a hidden SSID
-     * @param password The password of the network
+     * @param password The password of the network. Optional, if no password provided the network will treated as unencrypted.
+     * @param deviceiface The device interface name to attempt this connection on. Optional, if not provided "wlan0" will be attempted instead.
      * @returns Promise of the new connection profile's path
      */
-    public addWifiWpaConnection(ssid: string, hidden: boolean, password?: string): Promise<ConnectionProfilePath> {
+    public addWifiWpaConnection(ssid: string, hidden: boolean, password?: string, deviceiface?: string): Promise<ConnectionProfilePath> {
         let connectionProfile: any = {
             connection: {
               type: "802-11-wireless",
-              "interface-name": "wlan0",
+              "interface-name": deviceiface || "wlan0",
               uuid: uuidv4(),
               id: ssid
             },
@@ -159,6 +164,8 @@ export class ConnectionSettingsManager {
     }
 
     /**
+     * **Requires root access, depending on user permissions and NetworkManager policy configuration.**
+     * 
      * Deactivates and deletes a connection profile
      * This is used to implement "forget wifi network" functionality
      * @param profilePath The connection profile path to remove

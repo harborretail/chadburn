@@ -12,7 +12,7 @@
 <div class="col-8 col-content">
 <div class="tsd-page-title">
 <ul class="tsd-breadcrumb">
-<li><a href="../modules.html">chadburn</a></li>
+<li><a href="../index.html">chadburn</a></li>
 <li><a href="../modules/NetworkManagerTypes.html">NetworkManagerTypes</a></li>
 <li><a href="NetworkManagerTypes.NetworkManagerProperties.html">NetworkManagerProperties</a></li></ul>
 <h1>Interface NetworkManagerProperties</h1></div>
@@ -112,23 +112,27 @@ To determine the whether the user is able to access the Internet without dealing
 <div class="tsd-signature">Connectivity<wbr/>Check<wbr/>Available<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 <div class="tsd-comment tsd-typography"><p>Indicates whether connectivity checking service has been configured. This may return true even if the service is not currently enabled. 
 This is primarily intended for use in a privacy control panel, as a way to determine whether to show an option to enable/disable the feature.</p>
+
+<h3>See</h3><p><a href="https://developer-old.gnome.org/NetworkManager/stable/NetworkManager.conf.html">https://developer-old.gnome.org/NetworkManager/stable/NetworkManager.conf.html</a> Specifically the &quot;connectivity section&quot; near the bottom</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in network-manager/netman-dbus-types.ts:768</li></ul></aside></section>
+<li>Defined in network-manager/netman-dbus-types.ts:769</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="ConnectivityCheckEnabled" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>Connectivity<wbr/>Check<wbr/>Enabled</span><a href="#ConnectivityCheckEnabled" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">Connectivity<wbr/>Check<wbr/>Enabled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 <div class="tsd-comment tsd-typography"><p>Indicates whether connectivity checking is enabled. This property can also be written to to disable connectivity checking (as a privacy control panel might want to do).</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in network-manager/netman-dbus-types.ts:772</li></ul></aside></section>
+<li>Defined in network-manager/netman-dbus-types.ts:773</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="ConnectivityCheckUri" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>Connectivity<wbr/>Check<wbr/>Uri</span><a href="#ConnectivityCheckUri" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">Connectivity<wbr/>Check<wbr/>Uri<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>The URI that NetworkManager will hit to check if there is internet connectivity.</p>
+
+<h3>See</h3><p><a href="https://developer-old.gnome.org/NetworkManager/stable/NetworkManager.conf.html">https://developer-old.gnome.org/NetworkManager/stable/NetworkManager.conf.html</a> Specifically the &quot;connectivity section&quot; near the bottom</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in network-manager/netman-dbus-types.ts:776</li></ul></aside></section>
+<li>Defined in network-manager/netman-dbus-types.ts:780</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="Devices" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>Devices</span><a href="#Devices" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">Devices<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
@@ -145,7 +149,7 @@ The value of the &quot;domains&quot; key is a second-level dictionary, where eac
 &quot;servers&quot; is a string array of DNS servers, &quot;options&quot; is a string array of domain-specific options.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in network-manager/netman-dbus-types.ts:785</li></ul></aside></section>
+<li>Defined in network-manager/netman-dbus-types.ts:789</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="Metered" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>Metered</span><a href="#Metered" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">Metered<span class="tsd-signature-symbol">:</span> <a href="../enums/NetworkManagerTypes.Metered.html" class="tsd-signature-type" data-tsd-kind="Enumeration">Metered</a></div>
@@ -259,7 +263,7 @@ Shell that is able to cope with captive portals should use the &quot;Connectivit
 <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4.93896 8.531L12 15.591L19.061 8.531L16.939 6.409L12 11.349L7.06098 6.409L4.93896 8.531Z" fill="var(--color-text)"></path></svg> Modules</h3></summary>
 <div class="tsd-accordion-details">
 <ul>
-<li class="current"><a href="../modules.html">chadburn</a>
+<li class="current"><a href="../index.html">chadburn</a>
 <ul>
 <li class="tsd-kind-namespace"><a href="../modules/ModemManagerTypes.html">Modem<wbr/>Manager<wbr/>Types</a></li>
 <li class="current tsd-kind-namespace"><a href="../modules/NetworkManagerTypes.html">Network<wbr/>Manager<wbr/>Types</a></li></ul></li></ul></div></details></nav>
