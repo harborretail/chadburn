@@ -12,7 +12,7 @@
 <div class="col-8 col-content">
 <div class="tsd-page-title">
 <ul class="tsd-breadcrumb">
-<li><a href="../modules.html">chadburn</a></li>
+<li><a href="../index.html">chadburn</a></li>
 <li><a href="NetworkManager.html">NetworkManager</a></li></ul>
 <h1>Class NetworkManager</h1></div>
 <section class="tsd-panel tsd-comment">
@@ -52,7 +52,9 @@ Responsible for initializing various other managers/devices such as:</p>
 <h3 class="tsd-index-heading">Methods</h3>
 <div class="tsd-index-list"><a href="NetworkManager.html#init" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="#FF4DB8" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="12" id="icon-2048-path"></rect><path d="M9.162 16V7.24H10.578L11.514 10.072C11.602 10.328 11.674 10.584 11.73 10.84C11.794 11.088 11.842 11.28 11.874 11.416C11.906 11.28 11.954 11.088 12.018 10.84C12.082 10.584 12.154 10.324 12.234 10.06L13.122 7.24H14.538V16H13.482V12.82C13.482 12.468 13.49 12.068 13.506 11.62C13.53 11.172 13.558 10.716 13.59 10.252C13.622 9.78 13.654 9.332 13.686 8.908C13.726 8.476 13.762 8.1 13.794 7.78L12.366 12.16H11.334L9.894 7.78C9.934 8.092 9.97 8.456 10.002 8.872C10.042 9.28 10.078 9.716 10.11 10.18C10.142 10.636 10.166 11.092 10.182 11.548C10.206 12.004 10.218 12.428 10.218 12.82V16H9.162Z" fill="var(--color-text)" id="icon-2048-text"></path></svg><span>init</span></a>
 <a href="NetworkManager.html#_listenForPropertyChanges" class="tsd-index-link tsd-kind-method tsd-parent-kind-class tsd-is-private"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>_listen<wbr/>For<wbr/>Property<wbr/>Changes</span></a>
+<a href="NetworkManager.html#checkConnectivity" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>check<wbr/>Connectivity</span></a>
 <a href="NetworkManager.html#connectionSettingsManager" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>connection<wbr/>Settings<wbr/>Manager</span></a>
+<a href="NetworkManager.html#enableConnectivity" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>enable<wbr/>Connectivity</span></a>
 <a href="NetworkManager.html#enableWireless" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>enable<wbr/>Wireless</span></a>
 <a href="NetworkManager.html#ethernetDevices" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>ethernet<wbr/>Devices</span></a>
 <a href="NetworkManager.html#wifiDevices" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>wifi<wbr/>Devices</span></a>
@@ -146,7 +148,24 @@ The NetworkManager is a singleton, so calling this twice will return the same ob
 <li class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in network-manager/network-manager.ts:205</li></ul></aside></li></ul></section>
+<li>Defined in network-manager/network-manager.ts:240</li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="checkConnectivity" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>check<wbr/>Connectivity</span><a href="#checkConnectivity" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+<li class="tsd-signature tsd-anchor-link" id="checkConnectivity.checkConnectivity-1">check<wbr/>Connectivity<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/NetworkManagerTypes.ConnectivityState.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ConnectivityState</a><span class="tsd-signature-symbol">&gt;</span><a href="#checkConnectivity.checkConnectivity-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p><strong>Requires root access, depending on user permissions and NetworkManager policy configuration.</strong></p>
+<p>Initiates a new connectivity check and returns the result. In order for this method to work the <a href="NetworkManager.html#properties">properties</a>
+value for ConnectivityCheckAvailable and ConnectivityCheckEnabled will both need to be true, and 
+<a href="../interfaces/NetworkManagerTypes.NetworkManagerProperties.html#ConnectivityCheckUri">ConnectivityCheckUri</a> will need to be set to a valid NetworkManager connectivity service.</p>
+
+<h3>See</h3><p><a href="https://developer-old.gnome.org/NetworkManager/stable/NetworkManager.conf.html">https://developer-old.gnome.org/NetworkManager/stable/NetworkManager.conf.html</a> Specifically the &quot;connectivity section&quot; near the bottom</p>
+
+<h3>Returns</h3><p>Promise of a <a href="../enums/NetworkManagerTypes.ConnectivityState.html">ConnectivityState</a> value representing the current connectivity status.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/NetworkManagerTypes.ConnectivityState.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ConnectivityState</a><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in network-manager/network-manager.ts:229</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="connectionSettingsManager" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>connection<wbr/>Settings<wbr/>Manager</span><a href="#connectionSettingsManager" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -160,12 +179,34 @@ ConnectionSettingsManager is a singleton, so subsequent calls will return the sa
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="ConnectionSettingsManager.html" class="tsd-signature-type" data-tsd-kind="Class">ConnectionSettingsManager</a><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <ul>
 <li>Defined in network-manager/network-manager.ts:180</li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="enableConnectivity" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>enable<wbr/>Connectivity</span><a href="#enableConnectivity" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+<li class="tsd-signature tsd-anchor-link" id="enableConnectivity.enableConnectivity-1">enable<wbr/>Connectivity<span class="tsd-signature-symbol">(</span>enable<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#enableConnectivity.enableConnectivity-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p><strong>Requires root access, depending on user permissions and NetworkManager policy configuration.</strong></p>
+<p>Enables or disables built in connectivity checking mechanism in NetworkManager. The URI present in
+<a href="../interfaces/NetworkManagerTypes.NetworkManagerProperties.html#ConnectivityCheckUri">ConnectivityCheckUri</a> will be polled to determine connection status.</p>
+
+<h3>See</h3><p><a href="https://developer-old.gnome.org/NetworkManager/stable/NetworkManager.conf.html">https://developer-old.gnome.org/NetworkManager/stable/NetworkManager.conf.html</a> Specifically the &quot;connectivity section&quot; near the bottom</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>enable: <span class="tsd-signature-type">boolean</span></h5>
+<div class="tsd-comment tsd-typography"><p>If true, enable connectivity checks; if false, disable connectivity checks</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in network-manager/network-manager.ts:215</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="enableWireless" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>enable<wbr/>Wireless</span><a href="#enableWireless" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 <li class="tsd-signature tsd-anchor-link" id="enableWireless.enableWireless-1">enable<wbr/>Wireless<span class="tsd-signature-symbol">(</span>enable<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#enableWireless.enableWireless-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Enables or disables wireless functionality</p>
+<div class="tsd-comment tsd-typography"><p><strong>Requires root access, depending on user permissions and NetworkManager policy configuration.</strong></p>
+<p>Enables or disables wireless functionality</p>
 </div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
@@ -176,7 +217,7 @@ ConnectionSettingsManager is a singleton, so subsequent calls will return the sa
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in network-manager/network-manager.ts:201</li></ul></aside></li></ul></section>
+<li>Defined in network-manager/network-manager.ts:203</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="ethernetDevices" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>ethernet<wbr/>Devices</span><a href="#ethernetDevices" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -255,7 +296,7 @@ WifiDevices is a singleton, so subsequent calls will return the same object</p>
 <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4.93896 8.531L12 15.591L19.061 8.531L16.939 6.409L12 11.349L7.06098 6.409L4.93896 8.531Z" fill="var(--color-text)"></path></svg> Modules</h3></summary>
 <div class="tsd-accordion-details">
 <ul>
-<li><a href="../modules.html">chadburn</a>
+<li><a href="../index.html">chadburn</a>
 <ul>
 <li class="tsd-kind-namespace"><a href="../modules/ModemManagerTypes.html">Modem<wbr/>Manager<wbr/>Types</a></li>
 <li class="tsd-kind-namespace"><a href="../modules/NetworkManagerTypes.html">Network<wbr/>Manager<wbr/>Types</a></li></ul></li></ul></div></details></nav>
@@ -274,8 +315,10 @@ WifiDevices is a singleton, so subsequent calls will return the same object</p>
 <li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="NetworkManager.html#_properties" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>_properties</a></li>
 <li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="NetworkManager.html#_propertiesInterface" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>_properties<wbr/>Interface</a></li>
 <li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="NetworkManager.html#_propertiesSubject" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>_properties<wbr/>Subject</a></li>
+<li class="tsd-kind-method tsd-parent-kind-class"><a href="NetworkManager.html#checkConnectivity" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>check<wbr/>Connectivity</a></li>
 <li class="tsd-kind-method tsd-parent-kind-class"><a href="NetworkManager.html#connectionSettingsManager" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>connection<wbr/>Settings<wbr/>Manager</a></li>
 <li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-private"><a href="NetworkManager.html#constructor" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-512-path"></use><use href="#icon-512-text"></use></svg>constructor</a></li>
+<li class="tsd-kind-method tsd-parent-kind-class"><a href="NetworkManager.html#enableConnectivity" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>enable<wbr/>Connectivity</a></li>
 <li class="tsd-kind-method tsd-parent-kind-class"><a href="NetworkManager.html#enableWireless" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>enable<wbr/>Wireless</a></li>
 <li class="tsd-kind-method tsd-parent-kind-class"><a href="NetworkManager.html#ethernetDevices" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>ethernet<wbr/>Devices</a></li>
 <li class="tsd-kind-accessor tsd-parent-kind-class"><a href="NetworkManager.html#properties" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-262144-path"></use><use href="#icon-262144-text"></use></svg>properties</a></li>

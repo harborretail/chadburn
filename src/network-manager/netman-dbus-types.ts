@@ -764,7 +764,8 @@ export interface NetworkManagerProperties {
     /** 
      * Indicates whether connectivity checking service has been configured. This may return true even if the service is not currently enabled. 
      * This is primarily intended for use in a privacy control panel, as a way to determine whether to show an option to enable/disable the feature.
-    */
+     * @see https://developer-old.gnome.org/NetworkManager/stable/NetworkManager.conf.html Specifically the "connectivity section" near the bottom
+     */
     ConnectivityCheckAvailable: boolean;
 
     /** @member {boolean} */
@@ -772,7 +773,10 @@ export interface NetworkManagerProperties {
     ConnectivityCheckEnabled: boolean;
 
     /** @member {string} */
-    /** The URI that NetworkManager will hit to check if there is internet connectivity. */
+    /**
+     * The URI that NetworkManager will hit to check if there is internet connectivity. 
+     * @see https://developer-old.gnome.org/NetworkManager/stable/NetworkManager.conf.html Specifically the "connectivity section" near the bottom
+     */
     ConnectivityCheckUri: string;
 
     /** @member {any} */
