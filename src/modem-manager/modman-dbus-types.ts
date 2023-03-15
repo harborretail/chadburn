@@ -1117,7 +1117,7 @@ export interface Modem3gppProperties {
 }
 
 /**
- * aliased from the Bearer "Properties" property
+ * Aliased as BearerConfiguration from the Bearer "Properties" property from ModemManager.
  * @see https://www.freedesktop.org/software/ModemManager/doc/latest/ModemManager/gdbus-org.freedesktop.ModemManager1.Bearer.html#gdbus-property-org-freedesktop-ModemManager1-Bearer.Properties
  * 
  * List of settings used to create the bearer.

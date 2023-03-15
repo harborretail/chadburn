@@ -116,7 +116,7 @@ export class Modem3gpp {
     }
 
     /**
-     * @param settings an object which is a subset of {@link BearerConfiguration}, containing 3GPP specific fields
+     * @param settings an object which is a subset of {@link ModemManagerTypes.BearerConfiguration}, containing 3GPP specific fields
      * @see https://www.freedesktop.org/software/ModemManager/doc/latest/ModemManager/gdbus-org.freedesktop.ModemManager1.Bearer.html#gdbus-property-org-freedesktop-ModemManager1-Bearer.Properties
      * @example 
      * ```typescript

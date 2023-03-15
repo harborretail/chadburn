@@ -79,7 +79,7 @@
 <li>Defined in modem-manager/modman-dbus-types.ts:1086</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="InitialEpsBearerSettings" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>Initial<wbr/>Eps<wbr/>Bearer<wbr/>Settings</span><a href="#InitialEpsBearerSettings" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<div class="tsd-signature">Initial<wbr/>Eps<wbr/>Bearer<wbr/>Settings<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+<div class="tsd-signature">Initial<wbr/>Eps<wbr/>Bearer<wbr/>Settings<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 <div class="tsd-comment tsd-typography"><p>List of properties requested by the device for the initial EPS bearer during LTE network attach procedure.</p>
 <p>The network may decide to use different settings during the actual device attach procedure, e.g. if the device is roaming or no explicit settings were requested, so the values shown in the &quot;<a href="ModemManagerTypes.Modem3gppProperties.html#InitialEpsBearer">InitialEpsBearer</a>&quot; bearer object may be totally different.</p>
 <p>This is a read-only property, updating these settings should be done using the <a href="../classes/Modem3gpp.html">Modem3gpp</a> setInitialEpsBearerSettings method.</p>
@@ -88,10 +88,10 @@
 <li>Defined in modem-manager/modman-dbus-types.ts:1095</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="Nr5gRegistrationSettings" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>Nr5g<wbr/>Registration<wbr/>Settings</span><a href="#Nr5gRegistrationSettings" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<div class="tsd-signature">Nr5g<wbr/>Registration<wbr/>Settings<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+<div class="tsd-signature">Nr5g<wbr/>Registration<wbr/>Settings<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 <div class="tsd-comment tsd-typography"><p>5G specific registration settings.</p>
 <p>This is a read-only property, updating these settings should be done using the Set5gNrRegistrationSettings() method.</p>
-<pre><code><span class="hl-1">{</span><br/><span class="hl-1">    </span><span class="hl-0">&quot;micro-mode&quot;</span><span class="hl-1">: </span><span class="hl-3">Modem3gppMicoMode</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-0">&quot;drx-cycle&quot;</span><span class="hl-1">: </span><span class="hl-3">Modem3gppDrxCycle</span><br/><span class="hl-1">}</span>
+<pre><code><span class="hl-1">{</span><br/><span class="hl-1">    </span><span class="hl-8">&quot;micro-mode&quot;</span><span class="hl-1">: </span><span class="hl-2">Modem3gppMicoMode</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-8">&quot;drx-cycle&quot;</span><span class="hl-1">: </span><span class="hl-2">Modem3gppDrxCycle</span><br/><span class="hl-1">}</span>
 </code></pre>
 <p>&quot;micro-mode&quot; is a <a href="../enums/ModemManagerTypes.Modem3gppMicoMode.html">Modem3gppMicoMode</a> value representing the Mobile Initiated Connection (MICO) mode requested by the host, given as an unsigned integer</p>
 <p>&quot;drx-cycle&quot; is a <a href="../enums/ModemManagerTypes.Modem3gppDrxCycle.html">Modem3gppDrxCycle</a> value, representing the DRX settings requested by the host, given as an unsigned integer (signature &quot;u&quot;)</p>
@@ -126,7 +126,7 @@
 <h3 class="tsd-anchor-link"><span>Pco</span><a href="#Pco" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">Pco<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></div>
 <div class="tsd-comment tsd-typography"><p>Formatted as an array with 3 values or 0 values: </p>
-<pre><code><span class="hl-1">[</span><br/><span class="hl-1">    </span><span class="hl-3">number</span><span class="hl-1">, </span><span class="hl-2">//session ID</span><br/><span class="hl-1">    </span><span class="hl-3">boolean</span><span class="hl-1">, </span><span class="hl-2">//flag for if PCO data is the complete structure recieved from the network</span><br/><span class="hl-1">    </span><span class="hl-3">byte</span><span class="hl-1"> </span><span class="hl-3">array</span><span class="hl-1"> </span><span class="hl-2">//PCO data</span><br/><span class="hl-1">] </span>
+<pre><code><span class="hl-1">[</span><br/><span class="hl-1">    </span><span class="hl-2">number</span><span class="hl-1">, </span><span class="hl-6">//session ID</span><br/><span class="hl-1">    </span><span class="hl-2">boolean</span><span class="hl-1">, </span><span class="hl-6">//flag for if PCO data is the complete structure recieved from the network</span><br/><span class="hl-1">    </span><span class="hl-2">byte</span><span class="hl-1"> </span><span class="hl-2">array</span><span class="hl-1"> </span><span class="hl-6">//PCO data</span><br/><span class="hl-1">] </span>
 </code></pre>
 </div><aside class="tsd-sources">
 <ul>
