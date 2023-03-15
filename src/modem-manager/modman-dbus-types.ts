@@ -1092,7 +1092,7 @@ export interface Modem3gppProperties {
      * 
      * This is a read-only property, updating these settings should be done using the {@link "Modem3gpp"} setInitialEpsBearerSettings method. 
      */
-    InitialEpsBearerSettings: object;                   // a{sv}
+    InitialEpsBearerSettings: any;                   // a{sv}
 
     /**
      * A {@link Modem3gppPacketServiceState} value specifying the packet domain service state.
@@ -1113,7 +1113,7 @@ export interface Modem3gppProperties {
      * 
      * "drx-cycle" is a {@link Modem3gppDrxCycle} value, representing the DRX settings requested by the host, given as an unsigned integer (signature "u")
      */
-    Nr5gRegistrationSettings: object;                      // a{sv}
+    Nr5gRegistrationSettings: any;                      // a{sv}
 }
 
 /**
@@ -1267,7 +1267,7 @@ export interface BearerProperties {             // dbus type definition
      * "mtu" //Maximum transmission unit (MTU), given as an unsigned integer value (signature "u"). 
      * ```
      */
-    Ip4Config: object;                          // a{sv}
+    Ip4Config: any;                          // a{sv}
 
     /**
      * If the bearer was configured for IPv6 addressing, upon activation this property contains the addressing details for assignment to the data interface.
@@ -1293,7 +1293,7 @@ export interface BearerProperties {             // dbus type definition
      * "mtu" //Maximum transmission unit (MTU), given as an unsigned integer value (signature "u"). 
      * ```
      */
-    Ip6Config: object;                          // a{sv}
+    Ip6Config: any;                          // a{sv}
 
     /**
      * If the modem supports it, this property will show statistics associated to the bearer.
@@ -1317,7 +1317,7 @@ export interface BearerProperties {             // dbus type definition
      * "downlink-speed" //Downlink bit rate negotiated with network, in bits per second, given as an unsigned 64-bit integer value (signature "t").
      * ```
      */
-    Stats: object;                              // a{sv}
+    Stats: any;                              // a{sv}
 
     /** 
      * Indicates whether reloading ongoing statistics is supported or not.
