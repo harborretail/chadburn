@@ -421,15 +421,23 @@ export class Modem {
     }
 
     /**
-     * @hidden
+     * **Requires root access, depending on user permissions and ModemManager policy configuration.**
+     * 
      * Send an arbitrary AT command to a modem and get the response.
-     * Note that using this interface call is only allowed when running ModemManager in debug mode or if the project was built using the with-at-command-via-dbus configure option. 
+     * Note that using this interface call is only allowed when running ModemManager in debug mode, or if the ModemManager was built using the with-at-command-via-dbus configure option. 
      * @param cmd String: The command string, e.g. "AT+GCAP" or "+GCAP" (leading AT is inserted if necessary)
      * @param timeout optional - Integer: The number of seconds to wait for a response. Defaults to 5.
      * @return Promise of the modem's response
      */
     public async callCommand(cmd: string, timeout: number = 5) {
-
+        return new Promise(async (resolve, reject) => {
+            try {
+                let response = await call(this._modemInterface, "Command", {}, cmd, timeout);
+                resolve(response);
+            } catch(e) {
+                reject(`Error sending AT command "${cmd}": ${e}`);
+            }
+        });
     }
 
     private _listenForPropertyChanges() {
