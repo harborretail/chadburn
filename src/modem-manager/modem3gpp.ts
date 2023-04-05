@@ -116,8 +116,7 @@ export class Modem3gpp {
     }
 
     /**
-     * @hidden
-     * @param settings an object which is a subset of {@link BearerConfiguration}, containing 3GPP specific fields
+     * @param settings an object which is a subset of {@link ModemManagerTypes.BearerConfiguration}, containing 3GPP specific fields
      * @see https://www.freedesktop.org/software/ModemManager/doc/latest/ModemManager/gdbus-org.freedesktop.ModemManager1.Bearer.html#gdbus-property-org-freedesktop-ModemManager1-Bearer.Properties
      * @example 
      * ```typescript
@@ -135,7 +134,14 @@ export class Modem3gpp {
      * ```
      */
     public setInitialEpsBearerSettings(settings: Partial<BearerConfiguration>) {
-
+        return new Promise(async (resolve, reject) => {
+            try {
+                let value = call(this._modem3gppInterface, "SetInitialEpsBearerSettings", {}, settings);
+                resolve(value);
+            } catch(e) {
+                reject(`Error setting initial bearer settings: ${e}`);
+            }
+        });
     }
 
     /**
