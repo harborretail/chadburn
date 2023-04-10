@@ -4,8 +4,8 @@ import {
     Modem3gppProperties,
     Modem3gppNetworkAvailability,
     BearerConfiguration
- } from "./modman-dbus-types";
-import { call, getAllProperties, objectInterface, setProperty, signal, int32ToEnumArray } from "../util";
+ } from "../modman-dbus-types";
+import { call, getAllProperties, objectInterface, setProperty, signal, int32ToEnumArray } from "../../util";
 
 /**
  * A wrapper for the ModemManager Modem3gpp DBus API. 

@@ -1116,6 +1116,134 @@ export interface Modem3gppProperties {
     Nr5gRegistrationSettings: any;                      // a{sv}
 }
 
+export interface AdvancedSignalProperties {
+    /**
+     * Refresh rate, in seconds, for the extended signal quality information periodic polling, as configured via the Setup() method.
+     * A value of 0 indicates the periodic polling is disabled.
+     */
+    Rate: number,
+
+    /**
+     * The difference of signal RSSI measurements, in dBm, that should trigger a signal quality report update.
+     * A value of 0 indicates the threshold is disabled.
+     */
+    RssiThreshold: number,
+
+    /**
+     * Flag indicating whether signal quality report updates should be triggered on error rate measurement changes.
+     */
+    ErrorRateThreshold: boolean,
+
+    /**
+     * Dictionary of available signal information for the CDMA1x access technology.
+     * This dictionary is composed of a string key, with an associated data which contains type-specific information.
+     * 
+     * "rssi"
+     * The CDMA1x RSSI (Received Signal Strength Indication), in dBm, given as a floating point value (signature "d").
+     * 
+     * "ecio"
+     * The CDMA1x Ec/Io, in dBm, given as a floating point value (signature "d").
+     * 
+     * "error-rate"
+     * Frame error rate, in percentage value, given as a floating point value (signature "d").
+     */
+    Cdma: any,
+
+    /**
+     * Dictionary of available signal information for the CDMA EV-DO access technology.
+     * This dictionary is composed of a string key, with an associated data which contains type-specific information.
+     * 
+     * "rssi"
+     * The CDMA EV-DO RSSI (Received Signal Strength Indication), in dBm, given as a floating point value (signature "d").
+     * 
+     * "ecio"
+     * The CDMA EV-DO Ec/Io, in dBm, given as a floating point value (signature "d").
+     * 
+     * "sinr"
+     * CDMA EV-DO SINR level, in dB, given as a floating point value (signature "d").
+     * 
+     * "io"
+     * The CDMA EV-DO Io, in dBm, given as a floating point value (signature "d").
+     * 
+     * "error-rate"
+     * Packet error rate, in percentage value, given as a floating point value (signature "d").
+     */
+    Evdo: any,
+
+    /**
+     * Dictionary of available signal information for the GSM/GPRS access technology.
+     * This dictionary is composed of a string key, with an associated data which contains type-specific information.
+     * 
+     * "rssi"
+     * The GSM RSSI (Received Signal Strength Indication), in dBm, given as a floating point value (signature "d").
+     * 
+     * "error-rate"
+     * Bit error rate (BER), in percentage value, given as a floating point value (signature "d").
+     */
+    Gsm: any,
+
+    /**
+     * Dictionary of available signal information for the UMTS (WCDMA) access technology.
+     * This dictionary is composed of a string key, with an associated data which contains type-specific information.
+     * 
+     * "rssi"
+     * The UMTS RSSI (Received Signal Strength Indication), in dBm, given as a floating point value (signature "d").
+     * 
+     * "rscp"
+     * The UMTS RSCP (Received Signal Code Power), in dBm, given as a floating point value (signature "d").
+     * 
+     * "ecio"
+     * The UMTS Ec/Io, in dB, given as a floating point value (signature "d").
+     * 
+     * "error-rate"
+     * Block error rate (BLER), in percentage value, given as a floating point value (signature "d").
+     */
+    Umts: any,
+
+    /**
+     * Dictionary of available signal information for the LTE access technology.
+     * This dictionary is composed of a string key, with an associated data which contains type-specific information.
+     * 
+     * "rssi"
+     * The LTE RSSI (Received Signal Strength Indication), in dBm, given as a floating point value (signature "d").
+     * 
+     * "rsrq"
+     * The LTE RSRQ (Reference Signal Received Quality), in dB, given as a floating point value (signature "d").
+     * 
+     * "rsrp"
+     * The LTE RSRP (Reference Signal Received Power), in dBm, given as a floating point value (signature "d").
+     * 
+     * "snr"
+     * The LTE S/R ratio, in dB, given as a floating point value (signature "d").
+     * 
+     * "error-rate"
+     * Block error rate (BLER), in percentage value, given as a floating point value (signature "d").
+     */
+    Lte: any,
+
+    /**
+     * Dictionary of available signal information for the 5G access technology.
+     * This dictionary is composed of a string key, with an associated data which contains type-specific information.
+     * 
+     * "rsrq"
+     * The 5G RSRQ (Reference Signal Received Quality), in dB, given as a floating point value (signature "d").
+     * 
+     * "rsrp"
+     * The 5G RSRP (Reference Signal Received Power), in dBm, given as a floating point value (signature "d").
+     * 
+     * "snr"
+     * The 5G S/R ratio, in dB, given as a floating point value (signature "d").
+     * 
+     * "error-rate"
+     * Block error rate (BLER), in percentage value, given as a floating point value (signature "d").
+     */
+    Nr5g: any
+}
+
+export interface LocationProperties {
+    //TODO
+}
+
 /**
  * Aliased as BearerConfiguration from the Bearer "Properties" property from ModemManager.
  * @see https://www.freedesktop.org/software/ModemManager/doc/latest/ModemManager/gdbus-org.freedesktop.ModemManager1.Bearer.html#gdbus-property-org-freedesktop-ModemManager1-Bearer.Properties

@@ -19,7 +19,9 @@ import {
 import { Sim } from "./sim";
 import { Bearer } from "./bearer";
 import { call, getAllProperties, objectInterface, setProperty, signal, int32ToEnumArray } from "../util";
-import { Modem3gpp } from "./modem3gpp";
+import { Modem3gpp } from "./modem-interfaces/modem3gpp";
+import { AdvancedSignal } from "./modem-interfaces/advanced-signal";
+import { Location } from "./modem-interfaces/location";
 
 export class Modem {
     private _bus: DBus.DBusConnection;
@@ -28,6 +30,8 @@ export class Modem {
     private _sim: Sim | null;
     private _bearers: Bearer[];
     private _modem3gpp: Modem3gpp | undefined;
+    private _advancedSignal: AdvancedSignal | undefined;
+    private _location: Location | undefined;
 
     private _modemInterface: DBus.DBusInterface;
     private _propertiesInterface: DBus.DBusInterface;
@@ -288,6 +292,34 @@ export class Modem {
             this._modem3gpp = undefined;
         }
         return this._modem3gpp
+    }
+
+    /**
+     * @returns a Promise containing a new {@link AdvancedSignal} interface for the Modem
+     */
+    public async getAdvancedSignal(): Promise<AdvancedSignal | undefined> {
+        try {
+            if(!this._advancedSignal) {
+                this._advancedSignal = await AdvancedSignal.init(this._bus, this._objectPath);
+            }
+        } catch(e) {
+            this._advancedSignal = undefined;
+        }
+        return this._advancedSignal
+    }
+
+    /**
+     * @returns a Promise containing a new {@link Location} interface for the Modem
+     */
+    public async getLocation(): Promise<Location | undefined> {
+        try {
+            if(!this._location) {
+                this._location = await Location.init(this._bus, this._objectPath);
+            }
+        } catch(e) {
+            this._location = undefined;
+        }
+        return this._location
     }
 
     /**

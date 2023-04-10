@@ -18,7 +18,9 @@ import { ConnectionSettingsManager } from './network-manager/connection-settings
 import * as NetworkManagerTypes from './network-manager/netman-dbus-types';
 import { ModemManager } from './modem-manager/modem-manager';
 import { Modem } from './modem-manager/modem';
-import { Modem3gpp } from './modem-manager/modem3gpp';
+import { Modem3gpp } from './modem-manager/modem-interfaces/modem3gpp';
+import { Location } from './modem-manager/modem-interfaces/location';
+import { AdvancedSignal } from './modem-manager/modem-interfaces/advanced-signal';
 import { Sim } from './modem-manager/sim';
 import { Bearer } from './modem-manager/bearer';
 import * as ModemManagerTypes from './modem-manager/modman-dbus-types';
@@ -31,6 +33,8 @@ export {
     ModemManager,
     Modem,
     Modem3gpp,
+    Location,
+    AdvancedSignal,
     Sim,
     Bearer,
     NetworkManagerTypes,
