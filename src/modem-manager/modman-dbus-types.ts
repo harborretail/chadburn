@@ -977,6 +977,46 @@ export enum SimRemovability {
 }
 
 /**
+ * Sources of location information supported by the modem.
+ */
+export enum ModemLocationSource {
+    /** None. */
+    MM_MODEM_LOCATION_SOURCE_NONE = 0,
+
+    /** Location Area Code and Cell ID. */
+    MM_MODEM_LOCATION_SOURCE_3GPP_LAC_CI = 1,
+
+    /** GPS location given by predefined keys. */
+    MM_MODEM_LOCATION_SOURCE_GPS_RAW = 1 << 1,
+
+    /** GPS location given as NMEA traces. */
+    MM_MODEM_LOCATION_SOURCE_GPS_NMEA = 1 << 2,
+
+    /** CDMA base station position. */
+    MM_MODEM_LOCATION_SOURCE_CDMA_BS = 1 << 3,
+
+    /** No location given, just GPS module setup. Since ModemManager 1.4. */
+    MM_MODEM_LOCATION_SOURCE_GPS_UNMANAGED = 1 << 4,
+
+    /** Mobile Station Assisted A-GPS location requested. Since ModemManager 1.12. */
+    MM_MODEM_LOCATION_SOURCE_AGPS_MSA = 1 << 5,
+
+    /** Mobile Station Based A-GPS location requested. Since ModemManager 1.12. */
+    MM_MODEM_LOCATION_SOURCE_AGPS_MSB = 1 << 6
+}
+
+/**
+ * Type of assistance data that may be injected to the GNSS module.
+ */
+export enum ModemLocationAssistanceDataType {
+    /** None. */
+    MM_MODEM_LOCATION_ASSISTANCE_DATA_TYPE_NONE = 0,
+
+    /** Qualcomm gpsOneXTRA. */
+    MM_MODEM_LOCATION_ASSISTANCE_DATA_TYPE_XTRA = 1
+}
+
+/**
  * Properties for a Modem object
  * @see https://www.freedesktop.org/software/ModemManager/doc/latest/ModemManager/gdbus-org.freedesktop.ModemManager1.Modem.html
  */
@@ -1241,7 +1281,53 @@ export interface AdvancedSignalProperties {
 }
 
 export interface LocationProperties {
-    //TODO
+    /**
+     * Bitmask of {@link ModemLocationSource} values, specifying the supported location sources.
+     */
+    Capabilities: number
+
+    /**
+     * Bitmask of {@link ModemLocationAssistanceDataType} values, specifying the supported types of assistance data.
+     */
+    SupportedAssistanceData: number,
+
+    /**
+     * Bitmask specifying which of the supported {@link ModemLocationSource} location sources is currently enabled in the device.
+     */
+    Enabled: number,
+
+    /**
+     * `true` if location updates will be emitted via D-Bus signals, `false` if location updates will not be emitted.
+     */
+    SignalsLocation: boolean,
+
+    /**
+     * Dictionary of available location information when location information gathering is enabled. 
+     * If the modem supports multiple location types it may return more than one here.
+     * 
+     * For security reasons, the location information updates via this property are disabled by default. 
+     * Users can use this property to monitor location updates only if the location signals are enabled with setup(),
+     * but considering that enabling the location signals would allow all users to receive property updates as well, not just the process that enabled them.
+     * For a finer grained access control, the user can use the getLocation() method instead, which may require the client to authenticate itself on every call.
+     * 
+     * This dictionary is composed of a {@link ModemLocationSource} key, with an associated data which contains type-specific location information:
+     */
+    Location: any,
+
+    /**
+     * 
+     */
+    SuplServer: string,
+
+    /**
+     * 
+     */
+    AssistanceDataServers: string[],
+
+    /**
+     * 
+     */
+    GpsRefreshRate: number
 }
 
 /**

@@ -8,7 +8,7 @@ import {
 import { call, getAllProperties, objectInterface, setProperty, signal, int32ToEnumArray } from "../../util";
 
 /**
- * A wrapper for the ModemManager Modem3gpp DBus API. 
+ * A wrapper for the ModemManager Modem3gpp DBus interface. 
  * @see https://www.freedesktop.org/software/ModemManager/doc/latest/ModemManager/gdbus-org.freedesktop.ModemManager1.Modem.Modem3gpp.html
  */
 export class Modem3gpp {
