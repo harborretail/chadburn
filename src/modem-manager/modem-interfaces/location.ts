@@ -46,7 +46,7 @@ export class Location {
         return new Promise<Location>(async (resolve, reject) => {
             try {
 
-                let locationInterface = await objectInterface(bus, 'org.freedesktop.ModemManager1', objectPath, 'org.freedesktop.ModemManager1.Modem.Signal');
+                let locationInterface = await objectInterface(bus, 'org.freedesktop.ModemManager1', objectPath, 'org.freedesktop.ModemManager1.Modem.Location');
                 let initialProperties = await getAllProperties(locationInterface);
 
                 let propertiesInterface = await objectInterface(bus, 'org.freedesktop.ModemManager1', objectPath, 'org.freedesktop.DBus.Properties');
@@ -70,17 +70,25 @@ export class Location {
     }
 
     /**
-     * Configure the location sources to use when gathering location information. Adding new location sources may require to enable them in the device (e.g. the GNSS engine will need to be started explicitly if a GPS source is requested by the user). In the same way, removing location sources may require to disable them in the device (e.g. when no GPS sources are requested by the user, the GNSS engine will need to be stopped explicitly).
+     * Configure the location sources to use when gathering location information.
+     * Adding new location sources may require to enable them in the device
+     * (e.g. the GNSS engine will need to be started explicitly if a GPS source is requested by the user).
+     * In the same way, removing location sources may require to disable them in the device
+     * (e.g. when no GPS sources are requested by the user, the GNSS engine will need to be stopped explicitly).
      * 
      * This method may require the client to authenticate itself.
      * 
-     * When location signaling is enabled by the user, any client application (including malicious ones!) would be able to use the "Location" property to receive location updates. If further security is desired, the signal_location argument can be set to FALSE to disable location updates via D-Bus signals and require applications to call authenticated APIs (like GetLocation()) to get the location information.
+     * When location signaling is enabled by the user, any client application (including malicious ones!) would be able to use the "Location" property to receive location updates.
+     * If further security is desired, the signal_location argument can be set to FALSE to disable location updates via D-Bus signals and require applications to call authenticated APIs (like GetLocation()) to get the location information.
      * 
      * By default location signaling is disabled, and therefore the "{@link ModemManagerTypes.LocationProperties.Location Location}" property will not be usable until explicitly enabled by the user.
      * 
-     * The optional {@link ModemManagerTypes.ModemLocationSource.MM_MODEM_LOCATION_SOURCE_AGPS_MSA MM_MODEM_LOCATION_SOURCE_AGPS_MSA} and {@link ModemManagerTypes.ModemLocationSource.MM_MODEM_LOCATION_SOURCE_AGPS_MSB MM_MODEM_LOCATION_SOURCE_AGPS_MSB} allow to request MSA/MSB A-GPS operation, and they must be given along with either {@link ModemManagerTypes.ModemLocationSource.MM_MODEM_LOCATION_SOURCE_GPS_RAW MM_MODEM_LOCATION_SOURCE_GPS_RAW} or {@link ModemManagerTypes.ModemLocationSource.MM_MODEM_LOCATION_SOURCE_GPS_NMEA MM_MODEM_LOCATION_SOURCE_GPS_NMEA}.
+     * The optional {@link ModemManagerTypes.ModemLocationSource.MM_MODEM_LOCATION_SOURCE_AGPS_MSA MM_MODEM_LOCATION_SOURCE_AGPS_MSA} and {@link ModemManagerTypes.ModemLocationSource.MM_MODEM_LOCATION_SOURCE_AGPS_MSB MM_MODEM_LOCATION_SOURCE_AGPS_MSB} allow to request MSA/MSB A-GPS operation,
+     * and they must be given along with either {@link ModemManagerTypes.ModemLocationSource.MM_MODEM_LOCATION_SOURCE_GPS_RAW MM_MODEM_LOCATION_SOURCE_GPS_RAW} or {@link ModemManagerTypes.ModemLocationSource.MM_MODEM_LOCATION_SOURCE_GPS_NMEA MM_MODEM_LOCATION_SOURCE_GPS_NMEA}.
      * 
-     * Both {@link ModemManagerTypes.ModemLocationSource.MM_MODEM_LOCATION_SOURCE_AGPS_MSA MM_MODEM_LOCATION_SOURCE_AGPS_MSA} and {@link ModemManagerTypes.ModemLocationSource.MM_MODEM_LOCATION_SOURCE_AGPS_MSB MM_MODEM_LOCATION_SOURCE_AGPS_MSB} cannot be given at the same time, and if none given, standalone GPS is assumed.
+     * Both {@link ModemManagerTypes.ModemLocationSource.MM_MODEM_LOCATION_SOURCE_AGPS_MSA MM_MODEM_LOCATION_SOURCE_AGPS_MSA}
+     * and {@link ModemManagerTypes.ModemLocationSource.MM_MODEM_LOCATION_SOURCE_AGPS_MSB MM_MODEM_LOCATION_SOURCE_AGPS_MSB} cannot be given at the same time,
+     * and if none given, standalone GPS is assumed.
      * 
      * @param sources Bitmask of {@link ModemManagerTypes.ModemLocationSource ModemLocationSource} flags, specifying which sources should get enabled or disabled. {@link ModemManagerTypes.ModemLocationSource.MM_MODEM_LOCATION_SOURCE_NONE MM_MODEM_LOCATION_SOURCE_NONE} will disable all location gathering.
      * @param signal_location Flag to control whether the device emits signals with the new location information. This argument is ignored when disabling location information gathering. Defaults to `false`.

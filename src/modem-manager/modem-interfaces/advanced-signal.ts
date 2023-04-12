@@ -58,8 +58,6 @@ export class AdvancedSignal {
                     initialProperties
                 );
 
-                await advancedSignal.setupThreshold(10);
-
                 resolve(advancedSignal);
             } catch(err) {
                 reject(`Error initializing bearer: ${err}`);
@@ -72,6 +70,8 @@ export class AdvancedSignal {
     }
 
     /**
+     * Since ModemManager 1.2
+     * 
      * Enable or disable the extended signal quality information retrieval via periodic polling.
      * 
      * Polling is less than optimal; a better way to be notified of extended signal quality updates is to configure the modem to trigger the reports when the signal changes, i.e. with SetupThresholds().
@@ -79,13 +79,15 @@ export class AdvancedSignal {
      */
     public async setupPolling(rate: number) {
         if(rate >= 0) {
-            return call(this._advancedSignalInterface, 'SetupPolling', rate);
+            return call(this._advancedSignalInterface, 'Setup', rate);
         }
 
         throw 'AdvancedSignal.setupPolling: Invalid input: rate must be a positive integer. It is fed into DBus as an unsigned 32-bit integer.';
     }
 
     /**
+     * Since ModemManager 1.20
+     * 
      * Setup thresholds so that the device itself decides when to report the extended signal quality information updates.
      * 
      * The thresholds configured via this method specify the delta between specific signal quality measurements that would trigger a report by the modem.
