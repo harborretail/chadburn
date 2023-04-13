@@ -72,7 +72,7 @@ console.log(wifi_devices[0]?.properties);
 
 ```javascript
 const dbus = require('dbus');
-import { ModemManager } from 'chadburn';
+import { ModemManager, ModemManagerTypes } from 'chadburn';
 
 const bus = dbus.getBus('system');
 const modem_manager = await ModemManager.init(bus);
@@ -99,6 +99,13 @@ let modems = modem_manager.modems;
 // Alternatively, retrieve a modem by its object index
 // This gets /org/freedesktop/ModemManager1/Modem/0
 let modem0 = modem_manager.getModem(0);
+
+let modem03gpp = await modem0.getModem3gpp();
+
+let modem0location = await modem0.getLocation();
+
+let modem0signal = await modem0.getAdvancedSignal();
+
 ```
 
 ## Testing
