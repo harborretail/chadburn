@@ -1,6 +1,6 @@
 {
   "name": "chadburn",
-  "version": "0.2.0-rc.1",
+  "version": "0.2.0-rc.2",
   "description": "A nodejs interface to communicate with NetworkManager and ModemManager via DBus",
   "keywords": [
     "dbus",
