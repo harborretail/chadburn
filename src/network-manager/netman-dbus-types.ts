@@ -803,7 +803,8 @@ export interface ConnectionProfile {
     },
     ipv4: any,
     ipv6: any,
-    proxy: {}
+    proxy?: {},
+    [key: string]: any
 }
 
 /**
