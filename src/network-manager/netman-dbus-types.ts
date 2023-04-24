@@ -797,7 +797,7 @@ export interface NetworkManagerProperties {
 export interface ConnectionProfile {
     connection: {
         id: string;
-        'interface-name': string;
+        'interface-name'?: string;
         type: string;
         uuid: string;
     },
