@@ -798,7 +798,7 @@ export interface ConnectionProfile {
     connection: {
         id: string;
         'interface-name': string;
-        type: '802-11-wireless' | '802-3-ethernet';
+        type: string;
         uuid: string;
     },
     ipv4: any,
