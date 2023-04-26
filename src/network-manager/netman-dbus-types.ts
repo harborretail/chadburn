@@ -797,13 +797,14 @@ export interface NetworkManagerProperties {
 export interface ConnectionProfile {
     connection: {
         id: string;
-        'interface-name': string;
-        type: '802-11-wireless' | '802-3-ethernet';
+        'interface-name'?: string;
+        type: string;
         uuid: string;
     },
     ipv4: any,
     ipv6: any,
-    proxy: {}
+    proxy?: {},
+    [key: string]: any
 }
 
 /**
