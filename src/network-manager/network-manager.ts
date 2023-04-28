@@ -237,6 +237,79 @@ export class NetworkManager {
         });
     }
 
+    /**
+     * Create a checkpoint of the current networking configuration for given interfaces.
+     * If rollback_timeout is not zero, a rollback is automatically performed after the given timeout.
+     * @param timeout The time in seconds until NetworkManager will automatically rollback to the checkpoint. Set to zero for infinite.
+     * @param flags A bitmask of {@link NetworkManagerTypes!CheckpointCreateFlags} for checkpoint creation.
+     * @param devices A list of device paths for which a checkpoint should be created. An empty list means all devices. Defaults to an empty list.
+     * @returns A Promise of the DBus object path for the created Checkpoint
+     */
+    public createCheckpoint(timeout: number, flags: number, devices: string[] = []) {
+        return new Promise<string>(async (resolve, reject) => {
+            try {
+                let checkpt = await call(this._networkManagerInterface, "CheckpointCreate", {}, devices, timeout, flags);
+                resolve(checkpt);
+            } catch(err) {
+                reject(err);
+            }
+        });
+    }
+
+    /**
+     * Destroy a previously created checkpoint.
+     * @param checkpoint The DBus object path to the checkpoint to be destroyed. Set to an empty string to destroy all pending checkpoints.
+     * @returns Nothing, resolves on success.
+     */
+    public destroyCheckpoint(checkpoint: string) {
+        return new Promise<void>(async (resolve, reject) => {
+            try {
+                await call(this._networkManagerInterface, "CheckpointDestroy", {}, checkpoint);
+                resolve();
+            } catch(err) {
+                reject(err);
+            }
+        });
+    }
+
+    /**
+     * Rollback a checkpoint before the timeout is reached.
+     * @param checkpoint The DBus object path to the checkpoint to rollback to.
+     * @returns A Promise of a dictionary of devices represented by their DBus paths and {@link NetworkManagerTypes!RollbackResult} values.
+     */
+    public rollbackCheckpoint(checkpoint: string) {
+        return new Promise<any>(async (resolve, reject) => {
+            try {
+                let result = await call(this._networkManagerInterface, "CheckpointRollback", {}, checkpoint);
+                resolve(result);
+            } catch(err) {
+                reject(err);
+            }
+        });
+    }
+
+    /**
+     * Reset the timeout for rollback for the checkpoint.
+     * 
+     * Note that the added seconds start counting from now, not "Created" timestamp or the previous expiration time.
+     * Note that the "Created" property of the checkpoint will stay unchanged by this call. However, the "RollbackTimeout"
+     * will be recalculated to give the approximate new expiration time. The new "RollbackTimeout" property will be
+     * approximate up to one second precision, which is the accuracy of the property.
+     * @param checkpoint The DBus object path to the checkpoint to adjust.
+     * @param timeout Number of seconds from now in which the timeout will expire. Set to 0 to disable the timeout.
+     * @returns Nothing, resolves on success.
+     */
+    public adjustCheckpointTimeout(checkpoint: string, timeout: number) {
+        return new Promise<void>(async (resolve, reject) => {
+            try {
+                await call(this._networkManagerInterface, "CheckpointAdjustRollbackTimeout", {}, checkpoint, timeout);
+                resolve();
+            } catch(err) {
+                reject(err);
+            }
+        });
+    }
+
     private _listenForPropertyChanges() {
         signal(this._propertiesInterface, "PropertiesChanged").subscribe(async (propertyChangeInfo: any[]) => {
             //console.log(propertyChangeInfo);
