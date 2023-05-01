@@ -609,6 +609,50 @@ export enum DeviceStateReason {
     REASON_PEER_NOT_FOUND = 67,
 }
 
+export enum CheckpointCreateFlags {
+    /** no flags */
+    NM_CHECKPOINT_CREATE_FLAG_NONE = 0,
+
+    /** when creating a new checkpoint, destroy all existing ones. */
+    NM_CHECKPOINT_CREATE_FLAG_DESTROY_ALL = 1,
+    
+    /** upon rollback, delete any new connection added after the checkpoint. Since: NetworkManager 1.6. */
+    NM_CHECKPOINT_CREATE_FLAG_DELETE_NEW_CONNECTIONS = 1 << 1,
+
+    /** upon rollback, disconnect any new device appeared after the checkpoint. Since: NetworkManager 1.6. */
+    NM_CHECKPOINT_CREATE_FLAG_DISCONNECT_NEW_DEVICES = 1 << 2,
+
+    /**
+     * by default, creating a checkpoint fails if there are already existing checkoints that reference the same devices.
+     * With this flag, creation of such checkpoints is allowed, however, if an older checkpoint that references overlapping
+     * devices gets rolled back,it will automatically destroy this checkpoint during rollback. This allows to create several
+     * overlapping checkpoints in parallel, and rollback to them at will. With the special case that rolling back to an older
+     * checkpoint will invalidate all overlapping younger checkpoints. This opts-in that the checkpoint can be automatically
+     * destroyed by the rollback of an older checkpoint. Since: NetworkManager 1.12.
+     */
+    NM_CHECKPOINT_CREATE_FLAG_ALLOW_OVERLAPPING = 1 << 3,
+
+    /**
+     * during rollback, by default externally added ports attached to bridge devices are preserved. With this flag, the rollback
+     * detaches all external ports. This only has an effect for bridge ports. Before 1.38, this was the default behavior. Since: NetworkManager 1.38.
+     */
+    NM_CHECKPOINT_CREATE_FLAG_NO_PRESERVE_EXTERNAL_PORTS = 1 << 4
+}
+
+export enum RollbackResult {
+    /** the rollback succeeded. */
+    NM_ROLLBACK_RESULT_OK = 0,
+
+    /** the device no longer exists. */
+    NM_ROLLBACK_RESULT_ERR_NO_DEVICE = 1,
+
+    /** the device is now unmanaged. */
+    NM_ROLLBACK_RESULT_ERR_DEVICE_UNMANAGED = 2,
+
+    /** other errors during rollback. */
+    NM_ROLLBACK_RESULT_ERR_FAILED = 3
+}
+
 /**
  * Wi-Fi Access Point
  *
@@ -797,13 +841,14 @@ export interface NetworkManagerProperties {
 export interface ConnectionProfile {
     connection: {
         id: string;
-        'interface-name': string;
-        type: '802-11-wireless' | '802-3-ethernet';
+        'interface-name'?: string;
+        type: string;
         uuid: string;
     },
     ipv4: any,
     ipv6: any,
-    proxy: {}
+    proxy?: {},
+    [key: string]: any
 }
 
 /**
@@ -821,6 +866,21 @@ export interface ConnectionSettingsManagerProperties {
     /** @member {boolean} */
     /** If true, adding and modifying connections is supported. */
     CanModify: boolean;
+}
+
+/**
+ * Properties for checkpoint objects
+ * @see https://networkmanager.dev/docs/api/latest/gdbus-org.freedesktop.NetworkManager.Checkpoint.html
+ */
+export interface Checkpoint {
+    /** Array of object paths for devices which are part of this checkpoint. */
+    Devices: string[];          // ao
+
+    /** The timestamp (in CLOCK_BOOTTIME milliseconds) of checkpoint creation. */
+    Craeted: number;            // x
+
+    /** Timeout in seconds for automatic rollback, or zero. */
+    RollbackTimeout: number;    // u
 }
 
 interface DeviceProperties {

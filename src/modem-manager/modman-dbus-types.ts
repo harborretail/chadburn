@@ -977,6 +977,46 @@ export enum SimRemovability {
 }
 
 /**
+ * Sources of location information supported by the modem.
+ */
+export enum ModemLocationSource {
+    /** None. */
+    MM_MODEM_LOCATION_SOURCE_NONE = 0,
+
+    /** Location Area Code and Cell ID. */
+    MM_MODEM_LOCATION_SOURCE_3GPP_LAC_CI = 1,
+
+    /** GPS location given by predefined keys. */
+    MM_MODEM_LOCATION_SOURCE_GPS_RAW = 1 << 1,
+
+    /** GPS location given as NMEA traces. */
+    MM_MODEM_LOCATION_SOURCE_GPS_NMEA = 1 << 2,
+
+    /** CDMA base station position. */
+    MM_MODEM_LOCATION_SOURCE_CDMA_BS = 1 << 3,
+
+    /** No location given, just GPS module setup. Since ModemManager 1.4. */
+    MM_MODEM_LOCATION_SOURCE_GPS_UNMANAGED = 1 << 4,
+
+    /** Mobile Station Assisted A-GPS location requested. Since ModemManager 1.12. */
+    MM_MODEM_LOCATION_SOURCE_AGPS_MSA = 1 << 5,
+
+    /** Mobile Station Based A-GPS location requested. Since ModemManager 1.12. */
+    MM_MODEM_LOCATION_SOURCE_AGPS_MSB = 1 << 6
+}
+
+/**
+ * Type of assistance data that may be injected to the GNSS module.
+ */
+export enum ModemLocationAssistanceDataType {
+    /** None. */
+    MM_MODEM_LOCATION_ASSISTANCE_DATA_TYPE_NONE = 0,
+
+    /** Qualcomm gpsOneXTRA. */
+    MM_MODEM_LOCATION_ASSISTANCE_DATA_TYPE_XTRA = 1
+}
+
+/**
  * Properties for a Modem object
  * @see https://www.freedesktop.org/software/ModemManager/doc/latest/ModemManager/gdbus-org.freedesktop.ModemManager1.Modem.html
  */
@@ -1114,6 +1154,180 @@ export interface Modem3gppProperties {
      * "drx-cycle" is a {@link Modem3gppDrxCycle} value, representing the DRX settings requested by the host, given as an unsigned integer (signature "u")
      */
     Nr5gRegistrationSettings: any;                      // a{sv}
+}
+
+export interface AdvancedSignalProperties {
+    /**
+     * Refresh rate, in seconds, for the extended signal quality information periodic polling, as configured via the Setup() method.
+     * A value of 0 indicates the periodic polling is disabled.
+     */
+    Rate: number,
+
+    /**
+     * The difference of signal RSSI measurements, in dBm, that should trigger a signal quality report update.
+     * A value of 0 indicates the threshold is disabled.
+     */
+    RssiThreshold: number,
+
+    /**
+     * Flag indicating whether signal quality report updates should be triggered on error rate measurement changes.
+     */
+    ErrorRateThreshold: boolean,
+
+    /**
+     * Dictionary of available signal information for the CDMA1x access technology.
+     * This dictionary is composed of a string key, with an associated data which contains type-specific information.
+     * 
+     * "rssi"
+     * The CDMA1x RSSI (Received Signal Strength Indication), in dBm, given as a floating point value (signature "d").
+     * 
+     * "ecio"
+     * The CDMA1x Ec/Io, in dBm, given as a floating point value (signature "d").
+     * 
+     * "error-rate"
+     * Frame error rate, in percentage value, given as a floating point value (signature "d").
+     */
+    Cdma: any,
+
+    /**
+     * Dictionary of available signal information for the CDMA EV-DO access technology.
+     * This dictionary is composed of a string key, with an associated data which contains type-specific information.
+     * 
+     * "rssi"
+     * The CDMA EV-DO RSSI (Received Signal Strength Indication), in dBm, given as a floating point value (signature "d").
+     * 
+     * "ecio"
+     * The CDMA EV-DO Ec/Io, in dBm, given as a floating point value (signature "d").
+     * 
+     * "sinr"
+     * CDMA EV-DO SINR level, in dB, given as a floating point value (signature "d").
+     * 
+     * "io"
+     * The CDMA EV-DO Io, in dBm, given as a floating point value (signature "d").
+     * 
+     * "error-rate"
+     * Packet error rate, in percentage value, given as a floating point value (signature "d").
+     */
+    Evdo: any,
+
+    /**
+     * Dictionary of available signal information for the GSM/GPRS access technology.
+     * This dictionary is composed of a string key, with an associated data which contains type-specific information.
+     * 
+     * "rssi"
+     * The GSM RSSI (Received Signal Strength Indication), in dBm, given as a floating point value (signature "d").
+     * 
+     * "error-rate"
+     * Bit error rate (BER), in percentage value, given as a floating point value (signature "d").
+     */
+    Gsm: any,
+
+    /**
+     * Dictionary of available signal information for the UMTS (WCDMA) access technology.
+     * This dictionary is composed of a string key, with an associated data which contains type-specific information.
+     * 
+     * "rssi"
+     * The UMTS RSSI (Received Signal Strength Indication), in dBm, given as a floating point value (signature "d").
+     * 
+     * "rscp"
+     * The UMTS RSCP (Received Signal Code Power), in dBm, given as a floating point value (signature "d").
+     * 
+     * "ecio"
+     * The UMTS Ec/Io, in dB, given as a floating point value (signature "d").
+     * 
+     * "error-rate"
+     * Block error rate (BLER), in percentage value, given as a floating point value (signature "d").
+     */
+    Umts: any,
+
+    /**
+     * Dictionary of available signal information for the LTE access technology.
+     * This dictionary is composed of a string key, with an associated data which contains type-specific information.
+     * 
+     * "rssi"
+     * The LTE RSSI (Received Signal Strength Indication), in dBm, given as a floating point value (signature "d").
+     * 
+     * "rsrq"
+     * The LTE RSRQ (Reference Signal Received Quality), in dB, given as a floating point value (signature "d").
+     * 
+     * "rsrp"
+     * The LTE RSRP (Reference Signal Received Power), in dBm, given as a floating point value (signature "d").
+     * 
+     * "snr"
+     * The LTE S/R ratio, in dB, given as a floating point value (signature "d").
+     * 
+     * "error-rate"
+     * Block error rate (BLER), in percentage value, given as a floating point value (signature "d").
+     */
+    Lte: any,
+
+    /**
+     * Dictionary of available signal information for the 5G access technology.
+     * This dictionary is composed of a string key, with an associated data which contains type-specific information.
+     * 
+     * "rsrq"
+     * The 5G RSRQ (Reference Signal Received Quality), in dB, given as a floating point value (signature "d").
+     * 
+     * "rsrp"
+     * The 5G RSRP (Reference Signal Received Power), in dBm, given as a floating point value (signature "d").
+     * 
+     * "snr"
+     * The 5G S/R ratio, in dB, given as a floating point value (signature "d").
+     * 
+     * "error-rate"
+     * Block error rate (BLER), in percentage value, given as a floating point value (signature "d").
+     */
+    Nr5g: any
+}
+
+export interface LocationProperties {
+    /**
+     * Bitmask of {@link ModemLocationSource} values, specifying the supported location sources.
+     */
+    Capabilities: number
+
+    /**
+     * Bitmask of {@link ModemLocationAssistanceDataType} values, specifying the supported types of assistance data.
+     */
+    SupportedAssistanceData: number,
+
+    /**
+     * Bitmask specifying which of the supported {@link ModemLocationSource} location sources is currently enabled in the device.
+     */
+    Enabled: number,
+
+    /**
+     * `true` if location updates will be emitted via D-Bus signals, `false` if location updates will not be emitted.
+     */
+    SignalsLocation: boolean,
+
+    /**
+     * Dictionary of available location information when location information gathering is enabled. 
+     * If the modem supports multiple location types it may return more than one here.
+     * 
+     * For security reasons, the location information updates via this property are disabled by default. 
+     * Users can use this property to monitor location updates only if the location signals are enabled with setup(),
+     * but considering that enabling the location signals would allow all users to receive property updates as well, not just the process that enabled them.
+     * For a finer grained access control, the user can use the getLocation() method instead, which may require the client to authenticate itself on every call.
+     * 
+     * This dictionary is composed of a {@link ModemLocationSource} key, with an associated data which contains type-specific location information:
+     */
+    Location: any,
+
+    /**
+     * 
+     */
+    SuplServer: string,
+
+    /**
+     * 
+     */
+    AssistanceDataServers: string[],
+
+    /**
+     * 
+     */
+    GpsRefreshRate: number
 }
 
 /**
