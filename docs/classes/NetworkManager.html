@@ -52,11 +52,15 @@ Responsible for initializing various other managers/devices such as:</p>
 <h3 class="tsd-index-heading">Methods</h3>
 <div class="tsd-index-list"><a href="NetworkManager.html#init" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="#FF4DB8" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="12" id="icon-2048-path"></rect><path d="M9.162 16V7.24H10.578L11.514 10.072C11.602 10.328 11.674 10.584 11.73 10.84C11.794 11.088 11.842 11.28 11.874 11.416C11.906 11.28 11.954 11.088 12.018 10.84C12.082 10.584 12.154 10.324 12.234 10.06L13.122 7.24H14.538V16H13.482V12.82C13.482 12.468 13.49 12.068 13.506 11.62C13.53 11.172 13.558 10.716 13.59 10.252C13.622 9.78 13.654 9.332 13.686 8.908C13.726 8.476 13.762 8.1 13.794 7.78L12.366 12.16H11.334L9.894 7.78C9.934 8.092 9.97 8.456 10.002 8.872C10.042 9.28 10.078 9.716 10.11 10.18C10.142 10.636 10.166 11.092 10.182 11.548C10.206 12.004 10.218 12.428 10.218 12.82V16H9.162Z" fill="var(--color-text)" id="icon-2048-text"></path></svg><span>init</span></a>
 <a href="NetworkManager.html#_listenForPropertyChanges" class="tsd-index-link tsd-kind-method tsd-parent-kind-class tsd-is-private"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>_listen<wbr/>For<wbr/>Property<wbr/>Changes</span></a>
+<a href="NetworkManager.html#adjustCheckpointTimeout" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>adjust<wbr/>Checkpoint<wbr/>Timeout</span></a>
 <a href="NetworkManager.html#checkConnectivity" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>check<wbr/>Connectivity</span></a>
 <a href="NetworkManager.html#connectionSettingsManager" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>connection<wbr/>Settings<wbr/>Manager</span></a>
+<a href="NetworkManager.html#createCheckpoint" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>create<wbr/>Checkpoint</span></a>
+<a href="NetworkManager.html#destroyCheckpoint" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>destroy<wbr/>Checkpoint</span></a>
 <a href="NetworkManager.html#enableConnectivity" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>enable<wbr/>Connectivity</span></a>
 <a href="NetworkManager.html#enableWireless" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>enable<wbr/>Wireless</span></a>
 <a href="NetworkManager.html#ethernetDevices" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>ethernet<wbr/>Devices</span></a>
+<a href="NetworkManager.html#rollbackCheckpoint" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>rollback<wbr/>Checkpoint</span></a>
 <a href="NetworkManager.html#wifiDevices" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>wifi<wbr/>Devices</span></a>
 </div></section>
 <section class="tsd-index-section">
@@ -148,7 +152,34 @@ The NetworkManager is a singleton, so calling this twice will return the same ob
 <li class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in network-manager/network-manager.ts:240</li></ul></aside></li></ul></section>
+<li>Defined in network-manager/network-manager.ts:313</li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="adjustCheckpointTimeout" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>adjust<wbr/>Checkpoint<wbr/>Timeout</span><a href="#adjustCheckpointTimeout" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+<li class="tsd-signature tsd-anchor-link" id="adjustCheckpointTimeout.adjustCheckpointTimeout-1">adjust<wbr/>Checkpoint<wbr/>Timeout<span class="tsd-signature-symbol">(</span>checkpoint<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, timeout<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><a href="#adjustCheckpointTimeout.adjustCheckpointTimeout-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Reset the timeout for rollback for the checkpoint.</p>
+<p>Note that the added seconds start counting from now, not &quot;Created&quot; timestamp or the previous expiration time.
+Note that the &quot;Created&quot; property of the checkpoint will stay unchanged by this call. However, the &quot;RollbackTimeout&quot;
+will be recalculated to give the approximate new expiration time. The new &quot;RollbackTimeout&quot; property will be
+approximate up to one second precision, which is the accuracy of the property.</p>
+
+<h3>Returns</h3><p>Nothing, resolves on success.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>checkpoint: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The DBus object path to the checkpoint to adjust.</p>
+</div></li>
+<li>
+<h5>timeout: <span class="tsd-signature-type">number</span></h5>
+<div class="tsd-comment tsd-typography"><p>Number of seconds from now in which the timeout will expire. Set to 0 to disable the timeout.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in network-manager/network-manager.ts:302</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="checkConnectivity" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>check<wbr/>Connectivity</span><a href="#checkConnectivity" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -179,6 +210,53 @@ ConnectionSettingsManager is a singleton, so subsequent calls will return the sa
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="ConnectionSettingsManager.html" class="tsd-signature-type" data-tsd-kind="Class">ConnectionSettingsManager</a><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <ul>
 <li>Defined in network-manager/network-manager.ts:180</li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="createCheckpoint" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>create<wbr/>Checkpoint</span><a href="#createCheckpoint" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+<li class="tsd-signature tsd-anchor-link" id="createCheckpoint.createCheckpoint-1">create<wbr/>Checkpoint<span class="tsd-signature-symbol">(</span>timeout<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, flags<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, devices<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><a href="#createCheckpoint.createCheckpoint-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Create a checkpoint of the current networking configuration for given interfaces.
+If rollback_timeout is not zero, a rollback is automatically performed after the given timeout.</p>
+
+<h3>Returns</h3><p>A Promise of the DBus object path for the created Checkpoint</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>timeout: <span class="tsd-signature-type">number</span></h5>
+<div class="tsd-comment tsd-typography"><p>The time in seconds until NetworkManager will automatically rollback to the checkpoint. Set to zero for infinite.</p>
+</div></li>
+<li>
+<h5>flags: <span class="tsd-signature-type">number</span></h5>
+<div class="tsd-comment tsd-typography"><p>A bitmask of <a href="../enums/NetworkManagerTypes.CheckpointCreateFlags.html">CheckpointCreateFlags</a> for checkpoint creation.</p>
+</div></li>
+<li>
+<h5>devices: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></h5>
+<div class="tsd-comment tsd-typography"><p>A list of device paths for which a checkpoint should be created. An empty list means all devices. Defaults to an empty list.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in network-manager/network-manager.ts:248</li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="destroyCheckpoint" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>destroy<wbr/>Checkpoint</span><a href="#destroyCheckpoint" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+<li class="tsd-signature tsd-anchor-link" id="destroyCheckpoint.destroyCheckpoint-1">destroy<wbr/>Checkpoint<span class="tsd-signature-symbol">(</span>checkpoint<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><a href="#destroyCheckpoint.destroyCheckpoint-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Destroy a previously created checkpoint.</p>
+
+<h3>Returns</h3><p>Nothing, resolves on success.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>checkpoint: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The DBus object path to the checkpoint to be destroyed. Set to an empty string to destroy all pending checkpoints.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in network-manager/network-manager.ts:264</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="enableConnectivity" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>enable<wbr/>Connectivity</span><a href="#enableConnectivity" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -232,6 +310,25 @@ EthernetDevices is a singleton, so subsequent calls will return the same object<
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="EthernetDevice.html" class="tsd-signature-type" data-tsd-kind="Class">EthernetDevice</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <ul>
 <li>Defined in network-manager/network-manager.ts:140</li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="rollbackCheckpoint" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>rollback<wbr/>Checkpoint</span><a href="#rollbackCheckpoint" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+<li class="tsd-signature tsd-anchor-link" id="rollbackCheckpoint.rollbackCheckpoint-1">rollback<wbr/>Checkpoint<span class="tsd-signature-symbol">(</span>checkpoint<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><a href="#rollbackCheckpoint.rollbackCheckpoint-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Rollback a checkpoint before the timeout is reached.</p>
+
+<h3>Returns</h3><p>A Promise of a dictionary of devices represented by their DBus paths and <a href="../enums/NetworkManagerTypes.RollbackResult.html">RollbackResult</a> values.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>checkpoint: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The DBus object path to the checkpoint to rollback to.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in network-manager/network-manager.ts:280</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="wifiDevices" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>wifi<wbr/>Devices</span><a href="#wifiDevices" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -315,14 +412,18 @@ WifiDevices is a singleton, so subsequent calls will return the same object</p>
 <li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="NetworkManager.html#_properties" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>_properties</a></li>
 <li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="NetworkManager.html#_propertiesInterface" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>_properties<wbr/>Interface</a></li>
 <li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="NetworkManager.html#_propertiesSubject" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>_properties<wbr/>Subject</a></li>
+<li class="tsd-kind-method tsd-parent-kind-class"><a href="NetworkManager.html#adjustCheckpointTimeout" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>adjust<wbr/>Checkpoint<wbr/>Timeout</a></li>
 <li class="tsd-kind-method tsd-parent-kind-class"><a href="NetworkManager.html#checkConnectivity" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>check<wbr/>Connectivity</a></li>
 <li class="tsd-kind-method tsd-parent-kind-class"><a href="NetworkManager.html#connectionSettingsManager" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>connection<wbr/>Settings<wbr/>Manager</a></li>
 <li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-private"><a href="NetworkManager.html#constructor" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-512-path"></use><use href="#icon-512-text"></use></svg>constructor</a></li>
+<li class="tsd-kind-method tsd-parent-kind-class"><a href="NetworkManager.html#createCheckpoint" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>create<wbr/>Checkpoint</a></li>
+<li class="tsd-kind-method tsd-parent-kind-class"><a href="NetworkManager.html#destroyCheckpoint" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>destroy<wbr/>Checkpoint</a></li>
 <li class="tsd-kind-method tsd-parent-kind-class"><a href="NetworkManager.html#enableConnectivity" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>enable<wbr/>Connectivity</a></li>
 <li class="tsd-kind-method tsd-parent-kind-class"><a href="NetworkManager.html#enableWireless" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>enable<wbr/>Wireless</a></li>
 <li class="tsd-kind-method tsd-parent-kind-class"><a href="NetworkManager.html#ethernetDevices" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>ethernet<wbr/>Devices</a></li>
 <li class="tsd-kind-accessor tsd-parent-kind-class"><a href="NetworkManager.html#properties" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-262144-path"></use><use href="#icon-262144-text"></use></svg>properties</a></li>
 <li class="tsd-kind-property tsd-parent-kind-class"><a href="NetworkManager.html#properties_" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>properties$</a></li>
+<li class="tsd-kind-method tsd-parent-kind-class"><a href="NetworkManager.html#rollbackCheckpoint" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>rollback<wbr/>Checkpoint</a></li>
 <li class="tsd-kind-method tsd-parent-kind-class"><a href="NetworkManager.html#wifiDevices" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>wifi<wbr/>Devices</a></li></ul></li></ul></nav></div></div>
 <div class="container tsd-generator">
 <p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div>
