@@ -99,12 +99,71 @@ let modems = modem_manager.modems;
 // Alternatively, retrieve a modem by its object index
 // This gets /org/freedesktop/ModemManager1/Modem/0
 let modem0 = modem_manager.getModem(0);
+```
+**Modem interface**
+```javascript
+// Retrieve Modem data
+modem0.properties
 
+// Retreive human readable Modem data
+modem0.prettyProperties
+
+// Retrieve SIM data for the modem
+modem0.sim.properties
+
+// Retrieve Bearer data for the modem
+modem0.bearer.properties
+
+// *Requires root authentication*
+// *Requires ModemManager to be running in debug mode*
+// Send an AT command to the modem
+modem0.callCommand('AT+CGDCONT?');
+```
+
+**Modem3gpp interface**
+```javascript
 let modem03gpp = await modem0.getModem3gpp();
 
+// Retrieve Modem3gpp data
+modem03gpp.properties
+
+// Configure initial EPS bearer
+// allows you to set any of the 3GPP specific options found here
+// https://www.freedesktop.org/software/ModemManager/doc/latest/ModemManager/gdbus-org.freedesktop.ModemManager1.Bearer.html#gdbus-property-org-freedesktop-ModemManager1-Bearer.Properties
+modem03gpp.setInitialEpsBearerSettings({apn: 'yourapnhere'});
+
+```
+
+**Location interface**
+```javascript
+let ModemLocationSource = chadburn.ModemManagerTypes.ModemLocationSource;
 let modem0location = await modem0.getLocation();
 
+// Retrieve Location data
+modem0location.properties
+
+// Configure the modems location service(s)
+// First create a bitmask of location services to attempt to enable on the device
+let sources = ModemLocationSource.MM_MODEM_LOCATION_SOURCE_3GPP_LAC_CI + ModemLocationSource.MM_MODEM_LOCATION_SOURCE_GPS_RAW;
+await modem0location.setup(sources, true);
+
+// Retrieve currently available location data (should be the same as modem0location.properties.Location)
+let location = await modem0location.getLocation();
+
+```
+
+**Advanced Signal interface**
+```javascript
 let modem0signal = await modem0.getAdvancedSignal();
+
+// Retrieve signal data
+modem0signal.properties
+
+// Setup polling rate in seconds, 0 to disable
+await modem0signal.setupPolling(10);
+
+// Available in ModemManager 1.20.0, setup value threshold for RSSI measurements for updates, 0 to disable
+await modem0signal.setupThreshold(15);
 
 ```
 
